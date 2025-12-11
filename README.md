@@ -31,7 +31,7 @@ A static site for the Dot-Public proposal, built with [Eleventy](https://www.11t
 
 ### Prerequisites
 
-- Node.js 20 or higher
+- Node.js 22 (you can see the .nvmrc file and use the right version by saying `nvm use`. NVM will automatically pick the given version)
 - npm
 
 ### Installation
