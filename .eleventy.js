@@ -73,6 +73,7 @@ export default function(eleventyConfig) {
   });
 
   return {
+    pathPrefix: '/proposal/',
     dir: {
       input: 'src/templates',
       output: 'docs',

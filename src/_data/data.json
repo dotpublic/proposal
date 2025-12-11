@@ -26,7 +26,7 @@
               },
               {
                 "linkText": "The Proposal",
-                "linkUrl": "the-proposal.html"
+                "linkUrl": "/the-proposal.html"
               },
               {
                 "linkText": "Situating Dot-Public",
@@ -95,7 +95,7 @@
           "groupedContent": true,
           "iconURL": "/img/icons/eds-i-chevron-down-small.svg#eds-i-chevron-down-small",
           "title": "Introduction",
-          "content": "<ul><li><a href=\"/introducing-dotpublic.html\">Introducing Dot-Public</a></li><li><a href=\"the-proposal.html\">The Proposal</a></li><li><a href=\"/situating-dotpublic.html\">Situating Dot-Public</a></li></ul>"
+          "content": "<ul><li><a href=\"/introducing-dotpublic.html\">Introducing Dot-Public</a></li><li><a href=\"/the-proposal.html\">The Proposal</a></li><li><a href=\"/situating-dotpublic.html\">Situating Dot-Public</a></li></ul>"
         },
         {
           "open": false,
