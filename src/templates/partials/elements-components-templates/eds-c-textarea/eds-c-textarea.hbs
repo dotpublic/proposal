@@ -1,0 +1,16 @@
+<div class="eds-c-form__field">
+	{{#with label}}
+		{{> elements-components-templates/eds-c-label/eds-c-label required=../required inputId=../inputId}}
+	{{/with}}
+	{{#with hint}}
+		{{> elements-components-templates/eds-c-hint/eds-c-hint }}
+	{{/with}}
+	{{#with error}}
+		{{> elements-components-templates/eds-c-error-message/eds-c-error-message }}
+	{{/with}}
+	<textarea class="eds-c-form__input" {{> elements-components-templates/eds-c-textarea/eds-c-textarea-attributes }}
+		{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}
+	>
+		{{value}}
+	</textarea>
+</div>

@@ -1,0 +1,14 @@
+<label for="{{inputId}}" class="eds-c-label{{#if cssClass}} {{cssClass}}{{/if}}{{#if hideLabel}} u-visually-hidden{{/if}}">
+	{{text}}
+	{{#if required}}
+		{{#if requiredSuffix}}
+			{{{requiredSuffix}}}
+		{{/if}}
+	{{else}}
+		{{#if optionalSuffix}}
+			{{{optionalSuffix}}}
+		{{else}}
+			(optional)
+		{{/if}}
+	{{/if}}
+</label>

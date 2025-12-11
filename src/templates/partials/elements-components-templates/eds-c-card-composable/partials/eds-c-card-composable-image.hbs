@@ -1,0 +1,11 @@
+{{#if picture}}
+    <div class="eds-c-card-composable__picture"{{#if picture.aspectRatio}} style="--eds-c-card-composable--image-aspect-ratio: {{picture.aspectRatio}}"{{/if}}>
+        {{> elements-components-templates/eds-c-card-composable/partials/eds-c-card-composable-picture }}
+    </div>
+{{/if}}
+
+{{#if image}}
+    <div class="eds-c-card-composable__image" {{#if image.aspectRatio}} style="--eds-c-card-composable--image-aspect-ratio: {{image.aspectRatio}}"{{/if}}>
+        <img src="{{image.src}}" alt="{{image.alt}}">
+    </div>
+{{/if}}

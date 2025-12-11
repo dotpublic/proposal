@@ -1,0 +1,15 @@
+<nav aria-label="expander"> 
+    <div class="eds-c-header-new-expander__action-dropdown eds-c-header-new__mobile-menu" id="eds-c-header-new__mobile-menu" data-eds-c-header-new-expander-append>
+        {{#with navigationMenuMain}}
+            <div class="eds-c-header-new-expander__action-dropdown-section">
+                <ul class="u-list-reset">
+                    {{#each .}}
+                        <li>
+                            {{> elements-components-templates/eds-c-accordion/eds-c-accordion }}
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>                 
+        {{/with}}
+    </div>
+</nav>

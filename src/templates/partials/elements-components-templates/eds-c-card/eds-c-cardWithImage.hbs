@@ -1,0 +1,31 @@
+{{> elements-components-templates/eds-c-card/partials/eds-c-cardBody }}
+{{#if picture}}
+	<div class="eds-c-card__picture">
+		<picture {{#if picture.aspectRatio}} style="--eds-c-card--image-aspect-ratio: {{picture.aspectRatio}}"{{/if}}>
+			{{#each picture.source}}
+				<source
+					media="{{media}}"
+					{{#if dimensions}}
+						width="{{dimensions.width}}"
+						height="{{dimensions.height}}"
+					{{/if}}
+                    {{#if source.imageMimeType}}
+                        type="{{source.imageMimeType}}"
+                    {{/if}}
+					srcset="{{srcsetUrls}}">
+			{{/each}}
+			<img loading="lazy"
+				src="{{picture.img.src}}"
+				{{#if picture.img.dimensions}}
+					width="{{picture.img.dimensions.width}}"
+					height="{{picture.img.dimensions.height}}"
+				{{/if}}
+				srcset="{{picture.img.srcset}}"
+				alt="{{picture.img.alt}}">
+		</picture>
+	</div>
+{{else}}
+	<div class="eds-c-card__image" {{#if image.aspectRatio}} style="--eds-c-card--image-aspect-ratio: {{image.aspectRatio}}"{{/if}}>
+		<img src="{{image.src}}" alt="{{image.alt}}">
+	</div>
+{{/if}}

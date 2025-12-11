@@ -1,0 +1,66 @@
+<div
+	class="eds-c-copy-to-clipboard" 
+	data-test="copy-to-clipboard"
+	data-component-copytoclipboard-wrapper="{{componentUID}}"
+    {{#with feedback}}
+        {{#if uiFeedbackDuration}}data-ui-feedback-duration="{{uiFeedbackDuration}}" {{/if}}
+    {{/with}}
+>
+	{{#with inputField}}
+		<div
+			class="eds-c-form__field" 
+			data-test="copy-to-clipboard-form-field" {{#if maxWidth}}
+			style="--copy-to-clipboard-field-max-width: {{maxWidth}};" {{/if}}
+		>
+			{{#with label}}
+				<label
+					for="{{../inputId}}" 
+					id="{{../../componentUID}}-input-label"
+					class="eds-c-label{{#if cssClass}} {{cssClass}}{{/if}}"
+				>
+					<span>{{text}}</span>
+					<span
+						data-test="copy-to-clipboard-live-region"
+						data-component-copytoclipboard-live-region="{{../../componentUID}}" 
+						role="status" 
+						aria-live="polite"
+						{{#with ../../feedback}} 
+							data-live-region-text-on-success="{{liveRegionTextOnSuccess}}"
+							data-live-region-text-on-error="{{liveRegionTextOnError}}" 
+						{{/with}}
+                    >
+					</span>
+				</label>
+			{{/with}}
+			<input
+				type="text" 
+				id="{{inputId}}" 
+				value="{{value}}" 
+				readonly="" 
+				class="eds-c-form__input"
+				data-component-copytoclipboard-text-to-copy="{{../componentUID}}"
+			>
+		</div>
+	{{/with}}
+	<div
+		class="eds-c-copy-to-clipboard__control" 
+		data-test="copy-to-clipboard-control"
+		data-component-copytoclipboard-control="{{componentUID}}" 
+		{{#with feedback}} 
+			{{#if buttonTextOnSuccess}}data-button-text-on-success="{{buttonTextOnSuccess}}" {{/if}} 
+			{{#if buttonTextOnError}}data-button-text-on-error="{{buttonTextOnError}}" {{/if}}
+		{{/with}} 
+		{{#with button}} 
+			{{#if ariaLabelledBy}} data-component-copytoclipboard-button-aria-labelledby="{{ariaLabelledBy}}" 
+			{{else}} 
+				{{#if ariaLabel}} data-component-copytoclipboard-button-aria-label="{{ariaLabel}}" {{/if}} 
+			{{/if}} 
+		{{/with}}
+	>
+	</div>
+	{{#with button.template}}
+	<template data-button-template="">
+		{{> elements-components-templates/eds-c-button/eds-c-button }}
+	</template>
+	{{/with}}
+</div>

@@ -1,0 +1,21 @@
+{{#if linkUrl}}
+    <a href="{{linkUrl}}"
+        class="eds-c-button{{#if variant}} eds-c-button--{{variant}}{{/if}}{{#if size}} eds-c-button--{{size}}{{/if}}{{#if uiSettings.cssClass}} {{uiSettings.cssClass}}{{/if}} u-link-wide-area"
+        {{#if id}} id="{{id}}"{{/if}}
+		    {{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}
+        {{#if jsHook}} {{jsHook}}{{#if jsHookValue}}="{{jsHookValue}}" {{/if}}{{/if}}
+        {{#if download}} download{{/if}}
+        {{#if downloadWithFileName}} download="{{downloadWithFileName}}"{{/if}}>
+        {{> (lookup . 'template')}}
+    </a>
+{{else}}
+    <button
+		{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}
+        {{#if id}} id="{{id}}"{{/if}}
+				{{#if ariaLabel}} aria-label="{{ariaLabel}}" {{/if}}
+        {{#if jsHook}} {{jsHook}}{{#if jsHookValue}}="{{jsHookValue}}"{{/if}}{{/if}}
+        {{#if type}} type="{{type}}" {{/if}}
+         class="eds-c-button{{#if variant}} eds-c-button--{{variant}}{{/if}}{{#if size}} eds-c-button--{{size}}{{/if}}">
+    {{> (lookup . 'template')}}
+    </button>
+{{/if}}

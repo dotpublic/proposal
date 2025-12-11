@@ -1,0 +1,43 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf docs && mkdir docs",
+    "sass": "sass --style=expanded src/assets/scss:docs/css",
+    "sass:watch": "sass --style=expanded --watch src/assets/scss:docs/css",
+    "build:js": "rollup -c",
+    "build:js:prod": "ROLLUP_MINIFY=1 rollup -c",
+    "build:js:watch": "rollup -c -w",
+    "build:assets": "npm run build:js && npm run sass",
+    "build:assets:prod": "npm run build:js:prod && npm run sass",
+    "build": "npm run clean && npm run build:assets && npx eleventy",
+    "build:prod": "npm run clean && npm run build:assets:prod && npx eleventy",
+    "dev": "npm run build:assets && npx eleventy --serve --watch",
+    "preview": "npx serve docs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.2",
+    "@11ty/eleventy-plugin-handlebars": "1.0.0",
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "handlebars": "4.7.8",
+    "rollup-plugin-copy": "^3.5.0",
+    "serve": "^14.2.5"
+  },
+  "dependencies": {
+    "@springernature/elements": "^0.0.1-alpha.17",
+    "fs-jetpack": "^5.1.0",
+    "rollup": "^4.52.2",
+    "sass": "^1.93.2"
+  }
+}

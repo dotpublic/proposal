@@ -1,0 +1,17 @@
+<div class="eds-c-details">
+	<details {{#if open}}open aria-expanded="true"{{else}} aria-expanded="false" {{/if}} class="eds-c-details__details" data-eds-c-details>
+		<summary class="eds-c-details__summary" {{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}>
+			<div class="eds-c-details__header" {{#if headingLevel}}role="heading" aria-level="{{headingLevel}}"{{/if}}>
+				<svg class="u-icon" aria-hidden="true" focusable="false">
+					<use xlink:href="{{iconURL}}"></use>
+				</svg>
+				<span class="eds-c-details__title">
+					{{title}}
+				</span>
+			</div>
+		</summary>
+		<div class="eds-c-details__content">
+			{{{content}}}
+		</div>
+	</details>
+</div>

@@ -1,0 +1,10 @@
+{{#> eds-c-card-composable}}
+    <div class="eds-c-card-composable__container eds-c-card-composable__container--to-sidebar">
+        {{> elements-components-templates/eds-c-card-composable/partials/eds-c-card-composable-body }}
+        {{#if metadata}}
+            <div class="eds-c-card-composable__sidebar eds-c-card-composable__sidebar--with-separator">
+                {{> elements-components-templates/eds-c-card-composable/partials/eds-c-card-composable-metadata }}
+            </div>
+        {{/if}}
+    </div>
+{{/eds-c-card-composable}}

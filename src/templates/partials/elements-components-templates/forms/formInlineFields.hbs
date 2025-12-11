@@ -1,0 +1,12 @@
+{{#if fields}}
+	<div class="c-forms__inline-fields{{#if nowrap}} c-forms__inline-fields--nowrap{{/if}}"{{#if gap}} style="--form-inline-gap: {{gap}}"{{/if}}>
+		{{#each fields}}
+			{{> elements-components-templates/forms/formField }}
+		{{/each}}
+		{{#if buttons}}
+			{{#each buttons}}
+				{{> elements-components-templates/eds-c-button/eds-c-button }}
+			{{/each}}
+		{{/if}}
+	</div>
+{{/if}}

@@ -1,0 +1,10 @@
+<ul class="eds-c-hero__metadata-list{{#if isMetadataHorizontal}} eds-c-hero__metadata-list--horizontal{{/if}}{{#if isMetadataBig}} eds-c-hero__metadata-list--big{{/if}}">
+    {{#each items}}
+        <li class="eds-c-hero__metadata-list-item">
+            <p class="eds-c-hero__metadata-list-text">{{text}}</p>
+            {{#if description}}
+                <p class="eds-c-hero__metadata-list-description">{{description}}</p>
+            {{/if}}
+        </li>
+    {{/each}}
+</ul>

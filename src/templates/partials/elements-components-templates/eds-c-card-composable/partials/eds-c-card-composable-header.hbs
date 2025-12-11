@@ -1,0 +1,4 @@
+{{#if srOnlyHighlightText}}<span class="u-hide-sr-only">{{srOnlyHighlightText}}</span>{{/if}}
+{{#if cardLabel}}<p class="eds-c-card-composable__label">{{cardLabel}}</p>{{/if}}
+<h{{title.headingLevel}} class="eds-c-card-composable__title{{#if title.isSmall}} eds-c-card-composable__title--small{{/if}}">
+    <a {{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes dataAttributes=title.dataAttributes}} href="{{title.linkUrl}}">{{title.text}}</a></h{{title.headingLevel}}>

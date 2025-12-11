@@ -1,0 +1,36 @@
+{{#> eds-c-hero}} 
+    <div class="u-container eds-c-hero__content u-pt-32 u-pb-32">
+        {{#with breadcrumbs}}
+            {{> elements-components-templates/eds-c-breadcrumbs/eds-c-breadcrumbs }}
+        {{/with}}  
+        {{#with title}}
+            {{> elements-components-templates/eds-c-hero/partials/eds-c-hero-title }}
+        {{/with}}
+        {{#with heroSearch}}
+            <search class="eds-c-hero__search u-layout-focus" role="search"{{#if heroSearchAriaLabel}} aria-label="{{heroSearchAriaLabel}}"{{/if}}>
+                <form class="eds-c-form" method="{{method}}" action="{{url}}" {{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}>
+                    <div class="l-with-sidebar u-align-items-center" style="--with-sidebar--gap: 1rem;">
+                        <div class="u-mt-8">
+                            {{#with searchInput}}
+                                {{> elements-components-templates/eds-c-input/eds-c-input }}
+                            {{/with}} 
+                            {{#with advancedSearch}}
+                                <a href="{{url}}" class="{{#if contrast}}u-link--contrast{{else}}u-link{{/if}} u-link-wide-area u-mt-16" {{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}>{{text}}</a>
+                            {{/with}}
+                        </div>
+                        <div class="l-with-sidebar__sidebar" style="--with-sidebar--basis: 200px; --with-sidebar--min-width: 200px">
+                            {{#with searchBtn}}
+                                {{> elements-components-templates/eds-c-button/eds-c-button }}
+                            {{/with}}                          
+                        </div>  
+                    </div>
+                </form>
+            </search>
+        {{/with}}
+        <div class="u-mt-32">
+            {{#with metadata}}
+                {{> elements-components-templates/eds-c-hero/partials/eds-c-hero-metadata }}
+            {{/with}}
+        </div>
+    </div>
+{{/eds-c-hero}}

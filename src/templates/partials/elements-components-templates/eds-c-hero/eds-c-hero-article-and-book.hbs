@@ -1,0 +1,45 @@
+{{#> eds-c-hero}}
+    <div class="u-container eds-c-hero__content u-pt-32 u-pb-32">
+        <div class="l-with-sidebar" style="--with-sidebar--gap: 2rem; --with-sidebar--min-width: 300px">
+            <div>
+                {{#with breadcrumbs}}
+                    {{> elements-components-templates/eds-c-breadcrumbs/eds-c-breadcrumbs }}
+                {{/with}}  
+                {{#with title}}
+                    {{> elements-components-templates/eds-c-hero/partials/eds-c-hero-title }}
+                {{/with}}
+                {{#with subtitle}}
+                    {{> elements-components-templates/eds-c-hero/partials/eds-c-hero-subtitle }}
+                {{/with}}
+                {{#with metadata}}
+                    {{> elements-components-templates/eds-c-hero/partials/eds-c-hero-metadata }}
+                {{/with}}
+                {{#with access}}
+                    {{> elements-components-templates/eds-c-hero/partials/eds-c-hero-access }}
+                {{/with}}
+                <div class="eds-c-hero__buttons-container">
+                    {{#each buttons}}
+                        {{> elements-components-templates/eds-c-button/eds-c-button }}
+                    {{/each}}
+                </div>
+            </div>
+            <div class="l-with-sidebar__sidebar">
+                {{#with cover}}
+                    <div class="eds-c-hero__article-cover-wrapper">
+                        <div class="eds-c-hero__article-cover" {{#if aspectRatio}}style="--eds-c-hero--image-aspect-ratio: {{aspectRatio}}"{{/if}}>
+                            {{> elements-components-templates/eds-c-hero/partials/eds-c-hero-cover }}
+                        </div>
+                        <div class="eds-c-hero__article-cover-data">
+                            {{#if journalTitle}}
+                                <a class="eds-c-hero__link" href="{{linkUrl}}">{{journalTitle}}</a>
+                            {{/if}}
+                            {{#with metadata}}
+                                {{> elements-components-templates/eds-c-hero/partials/eds-c-hero-metadata }}
+                            {{/with}}
+                        </div>
+                    </div>
+                {{/with}}
+            </div>
+        </div>
+    </div>
+{{/eds-c-hero}}

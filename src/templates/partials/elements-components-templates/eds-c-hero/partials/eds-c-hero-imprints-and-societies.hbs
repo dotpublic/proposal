@@ -1,0 +1,36 @@
+<ul class="eds-c-hero__partnership-list">
+    {{#with imprint}}
+        <li class="eds-c-hero__partnership-list-item{{#if bgTransparent}} eds-c-hero__partnership-list-item--bg-transparent{{/if}}">
+            {{#if linkUrl}}
+                <a href="{{linkUrl}}" {{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}>
+                    {{#with picture}}
+                        {{> elements-components-templates/eds-c-hero/partials/eds-c-hero-picture }}
+                    {{/with}}
+                </a>
+            {{else}}
+                {{#with picture}}
+                    {{> elements-components-templates/eds-c-hero/partials/eds-c-hero-picture }}
+                {{/with}}
+            {{/if}}
+        </li>
+    {{/with}}
+    {{#with societies}}
+        <li class="eds-c-hero__partnership-list-item{{#if bgTransparent}} eds-c-hero__partnership-list-item--bg-transparent{{/if}}">
+            <div class="eds-c-hero__partnership-list-item-img-wrapper">
+                {{#each this}}
+                    {{#if linkUrl}}
+                        <a href="{{linkUrl}}" {{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}>
+                            {{#with picture}}
+                                {{> elements-components-templates/eds-c-hero/partials/eds-c-hero-picture }}
+                            {{/with}}
+                        </a>
+                    {{else}}
+                        {{#with picture}}
+                            {{> elements-components-templates/eds-c-hero/partials/eds-c-hero-picture }}
+                        {{/with}}
+                    {{/if}}
+                {{/each}}
+            </div>
+        </li>
+    {{/with}}
+</ul>

@@ -1,0 +1,17 @@
+<div class="eds-c-card{{#if layoutVariant}} {{layoutVariant}}{{/if}}{{#if cardStretchHeight}} eds-c-card--stretch-height{{/if}}"
+	{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}
+	>
+	<article class="eds-c-card__container{{#if highlight}} eds-c-card__container--highlight{{/if}}{{#if noImage}} eds-c-card__container--no-image{{/if}}{{#if withImage}} eds-c-card__container--image{{/if}}{{#if withIcon}} eds-c-card__container--icon{{/if}}{{#if withMetadata}} eds-c-card__container--metadata{{/if}}">
+		{{#if withImage}}
+			{{> (lookup . 'template')}}
+		{{else if withIcon}}
+			{{> (lookup . 'template')}}
+		{{else if withMetadata}}
+			{{> (lookup . 'template')}}
+		{{else}}
+			{{#unless template}}
+				{{> elements-components-templates/eds-c-card/partials/eds-c-cardBody }}
+			{{/unless}}
+		{{/if}}
+	</article>
+</div>

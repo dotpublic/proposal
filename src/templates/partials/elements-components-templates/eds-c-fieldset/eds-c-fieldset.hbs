@@ -1,0 +1,14 @@
+<fieldset class="eds-c-fieldset" {{> elements-components-templates/eds-c-fieldset/eds-c-fieldset-attributes }}>
+	<legend class="eds-c-fieldset__legend">{{legend}}</legend>
+	{{#with hint}}
+		{{> elements-components-templates/eds-c-hint/eds-c-hint }}
+	{{/with}}
+	{{#with error}}
+		{{> elements-components-templates/eds-c-error-message/eds-c-error-message }}
+	{{/with}}
+	<div class="l-stack" style="{{uiSettings.customInputsGap}}">
+		{{#each inputs}}
+			{{> (lookup . 'template')}}
+		{{/each}}
+	</div>
+</fieldset>

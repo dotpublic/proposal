@@ -1,0 +1,11 @@
+<div class="eds-c-header-new__brand{{#if navigationMain}} eds-c-header-new__brand--with-nav{{/if}}">
+    {{#if link}}
+        <a href="{{link}}" 
+            {{#if logo.dataTest}} data-test="{{logo.dataTest}}"{{/if}}
+						{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}>
+            {{> elements-components-templates/eds-c-header-new/partials/eds-c-header-new-logo-picture navigationMain=navigationMain}}
+        </a>
+    {{else}}
+        {{> elements-components-templates/eds-c-header-new/partials/eds-c-header-new-logo-picture navigationMain=navigationMain}}
+    {{/if}}
+</div>

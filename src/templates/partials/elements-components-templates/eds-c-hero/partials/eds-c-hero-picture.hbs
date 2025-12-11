@@ -1,0 +1,22 @@
+<picture>
+    {{#each sources}}
+        <source
+            media="{{media}}"
+            {{#if dimensions}}
+                width="{{dimensions.width}}"
+                height="{{dimensions.height}}"
+            {{/if}}
+            {{#if imageMimeType}}
+                type="{{imageMimeType}}"
+            {{/if}}
+                srcset="{{srcsetUrls}}">
+    {{/each}}
+    <img loading="lazy"
+         src="{{img.src}}"
+        {{#if img.dimensions}}
+         width="{{img.dimensions.width}}"
+         height="{{img.dimensions.height}}"
+        {{/if}}
+         srcset="{{img.srcset}}"
+         alt="{{img.alt}}">
+</picture>

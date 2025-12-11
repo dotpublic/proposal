@@ -1,0 +1,19 @@
+{{#if inputs}}
+	<fieldset class="c-forms__fieldset c-forms__field c-forms__radios" {{> elements-components-templates/forms/formAttributes }}>
+		{{#if legend}}
+			<legend class="c-forms__label">{{legend}}<span class="c-form__label--visually-hidden">{{#if groupDescription}}. {{groupDescription}}{{/if}}</span></legend>
+		{{else}}
+			{{#if label}}
+				<legend class="c-forms__label">{{label}}<span class="c-form__label--visually-hidden">{{#if groupDescription}}. {{groupDescription}}{{/if}}</span></legend>
+			{{/if}}
+		{{/if}}
+		{{#if error}}
+			{{> elements-components-templates/forms/formError }}
+		{{/if}}
+		<div {{#if pictographic}}class="c-forms__pictographic-radios"{{/if}}>
+			{{#each inputs}}
+				{{> elements-components-templates/forms/formRadio name=../name pictographic=../pictographic boxed=../boxed}}
+			{{/each}}
+		</div>
+	</fieldset>
+{{/if}}

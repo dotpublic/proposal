@@ -1,0 +1,8 @@
+{{> elements-components-templates/forms/formLabel }}
+{{#if error}}
+	{{> elements-components-templates/forms/formError }}
+{{/if}}
+<textarea
+	class="c-forms__input c-forms__input--textarea"
+	{{> elements-components-templates/forms/formAttributes }}
+>{{value}}</textarea>

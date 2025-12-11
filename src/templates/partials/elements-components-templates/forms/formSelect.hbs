@@ -1,0 +1,25 @@
+{{> elements-components-templates/forms/formLabel }}
+{{#if error}}
+	{{> elements-components-templates/forms/formError }}
+{{/if}}
+<div class="c-forms__input-container c-forms__input-container--select">
+	<select
+		class="c-forms__input c-forms__input--select"
+		{{> elements-components-templates/forms/formAttributes }}
+	>
+		{{#each options}}
+			<option
+				value="{{value}}"
+				{{#if selected}} selected{{/if}}
+				{{#if disabled}} disabled{{/if}}
+			>
+				{{label}}
+			</option>
+		{{/each}}
+	</select>
+	<span class="c-forms__icon c-forms__icon--error">
+		<svg class="u-icon u-mr-4" width="22" height="22" aria-hidden="true" focusable="false">
+			{{> elements-components-templates/forms/formIconSelect }}
+		</svg>
+	</span>
+</div>

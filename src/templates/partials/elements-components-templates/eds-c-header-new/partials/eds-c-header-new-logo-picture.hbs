@@ -1,0 +1,8 @@
+<picture>
+    {{#if navigationMain}}
+        <source media="(max-width: 1219px)" srcset="{{srcSmall}}">
+    {{else}}
+        <source media="(max-width: 767px)" srcset="{{srcSmall}}">
+    {{/if}}
+    <img src="{{srcLarge}}" alt="{{alt}}">
+</picture>

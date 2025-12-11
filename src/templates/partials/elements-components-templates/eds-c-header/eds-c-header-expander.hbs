@@ -1,0 +1,64 @@
+<nav aria-label="expander navigation">
+{{#unless snid}}
+    {{#if loggedIn}}
+        <div class="eds-c-header__expander eds-c-header__expander--account" id="eds-c-header-account" data-eds-c-header-expander-append>
+            {{#if headerAccount}}
+                {{#with headerAccount}}
+                    {{#if text}}<h2 class="eds-c-header__heading">{{text}}</h2>{{/if}}
+                    <ul class="eds-c-header__list">
+                        {{#each links}}
+                            <li class="eds-c-header__list-item">
+                                <a class="eds-c-header__link" href="{{url}}"
+																	{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}>
+                                    {{text}}
+                                </a>
+                            </li>
+                        {{/each}}
+                    </ul>
+                {{/with}}
+            {{/if}}
+        </div>
+    {{/if}}
+{{/unless}}
+
+{{#if headerNavigation.searchText}}
+    {{#with headerSearch}}
+        <div class="eds-c-header__expander eds-c-header__expander--search" id="eds-c-header-popup-search">
+            <h2 class="eds-c-header__heading">{{heading}}</h2>
+            <div class="u-container">
+                <search class="eds-c-header__search" role="search" aria-label="{{ariaLabel}}">
+                    <form method="GET" action="{{url}}"
+											{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}>
+                        <label for="eds-c-header-search" class="eds-c-header__search-label">{{label}}</label>
+                        <div class="eds-c-header__search-container">
+                            <input id="eds-c-header-search" class="eds-c-header__search-input" autocomplete="off" name="query" type="search" value="" required>
+                            <button class="eds-c-header__search-button" type="submit">
+                                <svg class="eds-c-header__icon" aria-hidden="true" focusable="false">
+                                    <use xlink:href="{{icon}}"></use>
+                                </svg>
+                                <span class="u-visually-hidden">{{text}}</span>
+                            </button>
+                        </div>
+                    </form>
+                </search>
+            </div>
+        </div>
+    {{/with}}
+{{/if}}
+
+<div class="eds-c-header__expander eds-c-header__expander--menu" id="eds-c-header-nav">
+    {{#with headerNavigation}}
+        {{#if text}}<h2 class="eds-c-header__heading">{{text}}</h2>{{/if}}
+        <ul class="eds-c-header__list">
+            {{#each links}}
+                <li class="eds-c-header__list-item">
+                   <a class="eds-c-header__link" href="{{url}}"
+										 {{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}>
+                        {{text}}
+                    </a>
+                </li>
+            {{/each}}
+        </ul>
+    {{/with}}
+</div>
+</nav>

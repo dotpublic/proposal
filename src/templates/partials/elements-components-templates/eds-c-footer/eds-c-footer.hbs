@@ -1,0 +1,10 @@
+<footer>
+	<div class="eds-c-footer" {{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}>
+		{{#if productGroups}}
+			{{! Partials locations are set dynamically in the data }}
+			{{> elements-components-templates/eds-c-footer/partials/eds-c-footer-product }}
+		{{/if}}
+		{{! Partials locations are set dynamically in the data }}
+		{{> elements-components-templates/eds-c-footer/partials/eds-c-footer-corporate }}
+	</div>
+</footer>

@@ -1,0 +1,43 @@
+{{#> eds-c-hero}}
+    <div class="u-container eds-c-hero__content u-pt-32 u-pb-32">
+        <div class="l-grid eds-c-hero__journal">
+            {{#with breadcrumbs}}
+                <div class="eds-c-hero__breadcrumbs">
+                    {{> elements-components-templates/eds-c-breadcrumbs/eds-c-breadcrumbs }}
+                </div>
+            {{/with}} 
+
+            {{#with partnership}}
+                <div class="eds-c-hero__partnership">
+                    {{> elements-components-templates/eds-c-hero/partials/eds-c-hero-imprints-and-societies }}
+                </div>
+            {{/with}}
+
+            {{#with cover}}
+                <div class="eds-c-hero__journal-cover" {{#if aspectRatio}}style="--eds-c-hero--image-aspect-ratio: {{aspectRatio}}"{{/if}}>
+                    {{> elements-components-templates/eds-c-hero/partials/eds-c-hero-cover }}
+                </div>
+            {{/with}}
+
+            <div class="eds-c-hero__info">
+                {{#with title}}
+                    {{> elements-components-templates/eds-c-hero/partials/eds-c-hero-title }}
+                {{/with}}
+                {{#with subtitle}}
+                    {{> elements-components-templates/eds-c-hero/partials/eds-c-hero-subtitle }}
+                {{/with}}
+                {{#with metadata}}
+                    {{> elements-components-templates/eds-c-hero/partials/eds-c-hero-metadata }}
+                {{/with}}
+                {{#with access}}
+                    {{> elements-components-templates/eds-c-hero/partials/eds-c-hero-access }}
+                {{/with}}
+                <div class="eds-c-hero__buttons-container">
+                    {{#each buttons}}
+                        {{> elements-components-templates/eds-c-button/eds-c-button }}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+{{/eds-c-hero}}

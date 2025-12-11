@@ -1,0 +1,9 @@
+<div class="eds-c-hero {{bgColor}}">
+    {{#with bgPicture}}
+        <div class="eds-c-hero__bg-picture"{{#if aspectRatio}} style="--eds-c-hero--image-aspect-ratio: {{aspectRatio}}"{{/if}}>
+            {{> elements-components-templates/eds-c-hero/partials/eds-c-hero-picture }}
+        </div>
+    {{/with}}
+    <div class="eds-c-hero__bg-overlay{{#if bgPicture}} eds-c-hero__bg-overlay--with-image{{/if}}"></div>
+    {{> @partial-block}}
+</div>

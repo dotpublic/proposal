@@ -1,0 +1,8 @@
+id="{{inputId}}"
+name="{{name}}"
+type="radio" 
+{{#if value}} value="{{value}}"{{/if}}
+{{#if error}} invalid aria-invalid="true" aria-describedby="error-{{error.errorInputId}}"{{/if}}
+{{#if required}} required aria-required="true"{{/if}}
+{{#if disabled}} disabled{{/if}}
+{{#if checked}} checked{{/if}}

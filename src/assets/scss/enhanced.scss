@@ -1,0 +1,59 @@
+// import the elements theme
+@import '../../../node_modules/@springernature/elements/themes/springernature/scss/enhanced';
+
+// import the elements components that the consumer application will need
+@import '../../../node_modules/@springernature/elements/components/eds-c-header-new';
+@import '../../../node_modules/@springernature/elements/components/eds-c-navigation';
+@import '../../../node_modules/@springernature/elements/components/eds-c-accordion';
+
+// utilities
+@import '../../../node_modules/@springernature/elements/themes/springernature/scss/utilities';
+
+.eds-c-header-new {
+    height: 64px;
+}
+
+.eds-c-header-new__brand img {
+	height: 2rem;
+	min-width: 135px;
+}
+
+.app-footer {
+	background-color: $t-a-palette-default-greyscale-700;
+	padding-top: $t-a-space-absolute-800;
+	padding-bottom: $t-a-space-absolute-800;
+	color: $t-a-palette-default-white;
+	line-height: $t-a-typography-line-height-tight;
+	font-size: $t-a-typography-font-size-xs;
+}
+
+.app-footer__container {
+	@include u-container;
+	@include u-hide-print;
+}
+
+.app-main {
+    background-color: #efefef;
+}
+
+.app-main__container {
+    padding: $t-a-space-absolute-600 $t-a-space-absolute-600 $t-a-space-absolute-1600 $t-a-space-absolute-600;
+    background-color: $t-a-palette-default-white;
+	border-radius: 0 0 $t-a-space-absolute-600 0;
+}
+
+.app-content-centered {
+	margin: 0 auto;
+}
+
+.app-claim {
+	font-size: 3rem;
+	@include from-desktop-xl {
+		font-size: 5rem;
+	}
+}
+
+.app-draft {
+	border-bottom: $t-a-space-absolute-100 solid $t-a-palette-default-blue-light-400;
+	padding-bottom: $t-a-space-absolute-400;
+}

@@ -1,0 +1,20 @@
+id="{{inputId}}"
+name="{{name}}"
+type="{{inputType}}"
+{{#if value}} value="{{value}}"{{/if}}
+{{#if error}} invalid aria-invalid="true" aria-describedby="error-{{error.errorInputId}}"{{/if}}
+{{#if required}} required aria-required="true"{{/if}}
+{{#if disabled}} disabled{{/if}}
+{{#if readonly}} readonly{{/if}}
+{{#if max}} max="{{max}}"{{/if}}
+{{#if maxlength}} maxlength="{{maxlength}}"{{/if}}
+{{#if minlength}} minlength="{{minlength}}"{{/if}}
+{{#if autocomplete}} autocomplete="{{autocomplete}}"{{else}} autocomplete="off"{{/if}}
+{{#if novalidate}} novalidate{{/if}}
+{{#if datalist.id}} list="{{datalist.id}}"{{/if}}
+{{#if multiple}} multiple{{/if}}
+{{#if pattern}} pattern="{{pattern}}"{{/if}}
+{{#if placeholder}} placeholder="{{placeholder}}"{{/if}}
+{{#if tabindex}} tabindex="{{tabindex}}"{{/if}}
+{{#if title}} title="{{title}}"{{/if}}
+{{#if inputmode}} inputmode="{{inputmode}}"{{/if}}

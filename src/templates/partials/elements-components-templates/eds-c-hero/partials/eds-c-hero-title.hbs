@@ -1,0 +1,19 @@
+{{#if headingLevel}}
+    <h{{headingLevel}} class="eds-c-hero__title{{#if small}} eds-c-hero__title--small{{/if}}">
+{{else}}
+    <span class="eds-c-hero__title eds-c-hero__title--span{{#if small}} eds-c-hero__title--small{{/if}}">
+{{/if}}
+
+    {{#if linkUrl}}
+        <a href="{{linkUrl}}" class="eds-c-hero__link">
+            {{text}}
+        </a>
+    {{else}}
+        {{text}}
+    {{/if}}
+
+{{#if headingLevel}}
+    </h{{headingLevel}}>
+{{else}}
+    </span>
+{{/if}}

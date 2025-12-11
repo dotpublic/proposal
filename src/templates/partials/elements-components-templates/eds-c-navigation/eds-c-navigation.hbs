@@ -1,0 +1,33 @@
+<nav class="eds-c-navigation {{#if trayDropdown}}eds-c-navigation--tray-dropdown{{else}}eds-c-navigation--fixed-width-dropdown{{/if}}" aria-label="{{navigationAriaLabel}}"
+	 data-eds-c-navigation>
+	<ul class="eds-c-navigation__desktop-menu">
+		{{#each navigationItems}}
+			<li class="eds-c-navigation__menu-item">
+				<a href="{{#unless noDropdown}}#{{/unless}}{{triggerUrl}}" class="eds-c-navigation__menu-link{{#if active}} eds-c-navigation__menu-link--active{{/if}}"{{#unless noDropdown}} data-eds-c-navigation-expander{{/unless}}
+					{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}>
+					{{triggerText}}
+					{{#unless noDropdown}}
+						<svg class="eds-c-navigation__icon" aria-hidden="true" focusable="false">
+							<use xlink:href="{{../iconPath}}"></use>
+						</svg>
+					{{/unless}}
+				</a>
+			</li>
+		{{/each}}
+	</ul>
+	<ul class="eds-c-navigation__mobile-menu">
+		{{#each navigationItems}}
+			<li {{#if noDropdown}}class="eds-c-navigation__no-dropdown"{{/if}}>
+				{{#if noDropdown}}
+					<a href="{{triggerUrl}}" {{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}>
+						{{triggerText}}
+					</a>
+				{{else}}
+					{{#with mobileAccordion}}
+						{{> elements-components-templates/eds-c-accordion/eds-c-accordion }}
+					{{/with}}
+				{{/if}}
+			</li>
+		{{/each}}
+	</ul>
+</nav>

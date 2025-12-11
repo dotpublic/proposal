@@ -1,0 +1,12 @@
+<div class="eds-c-header-new-expander__action-dropdown-section eds-c-header-new-expander__action-dropdown-section--notifications">
+    <div>
+        <a href="{{url}}" class="eds-c-header-new-expander__link" {{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}>
+            <svg class="u-icon" aria-hidden="true" focusable="false">
+              <use xlink:href="{{iconURL}}"></use>
+            </svg>
+            <span class="eds-c-header-new-expander__notifications-text">
+                {{text}}{{#if notificationsCount}} (<span data-eds-c-header-new-dropdown-notifications-count>{{notificationsCount}}</span>){{/if}}
+            </span>
+        </a>
+    </div>
+</div>

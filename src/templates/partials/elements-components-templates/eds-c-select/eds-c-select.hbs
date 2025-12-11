@@ -1,0 +1,34 @@
+<div class="eds-c-form__field">
+	{{#with label}}
+		{{> elements-components-templates/eds-c-label/eds-c-label required=../required inputId=../inputId}}
+	{{/with}}
+    {{#with hint}}
+		{{> elements-components-templates/eds-c-hint/eds-c-hint }}
+	{{/with}}
+	{{#with error}}
+		{{> elements-components-templates/eds-c-error-message/eds-c-error-message }}
+	{{/with}}
+	<div class="eds-c-select__wrapper">
+		<select class="eds-c-form__input eds-c-select" {{> elements-components-templates/eds-c-select/eds-c-select-attributes }}>
+			{{#if optgroup}}
+				{{#each optgroup}}
+					<optgroup label="{{optgroupLabel}}"{{#if groupId}} data-eds-c-select-optgroup-id="{{optgroupId}}"{{/if}}>
+						{{#each options}}
+							{{> elements-components-templates/eds-c-select/partials/eds-c-select-option }}
+						{{/each}}
+					</optgroup>
+					{{#if optgroupSeparator}}<hr>{{/if}}
+				{{/each}} 
+			{{else}}
+				{{#each options}}
+					{{> elements-components-templates/eds-c-select/partials/eds-c-select-option }}
+				{{/each}}
+			{{/if}}
+		</select>
+		<span class="eds-c-select__icon">
+			<svg class="u-icon u-mr-4" width="24" height="24" aria-hidden="true" focusable="false">
+				<use xlink:href="{{icon}}"></use>
+			</svg>
+		</span>
+	</div>
+</div>

@@ -1,0 +1,30 @@
+<aside class="eds-c-status-message{{#if type}} eds-c-status-message--{{type}}{{/if}}"{{#if liveRegion}} role="status" aria-live="polite"{{/if}} aria-label="{{ariaLabel}}" data-eds-c-status-message>
+	<div class="eds-c-status-message__content-icon">
+		<svg class="eds-c-status-message__icon" aria-hidden="true" focusable="false">
+			<title>{{svgTitle}}</title>
+			<use xlink:href="{{iconURL}}"></use>
+		</svg>
+	</div>
+	<div class="eds-c-status-message__text">
+		{{#if withTitle}}
+			<div class="eds-c-status-message__title">
+				{{title}}
+			</div>
+		{{/if}}
+		<div class="eds-c-status-message__message" tabindex="-1"{{#if id}} id="{{id}}"{{/if}}>
+			{{{message}}}
+		</div>
+	</div>
+	{{#if dismissable}}
+	<div class="eds-c-status-message__dismiss">
+		<button class="eds-c-status-message__dismiss-button" type="button" aria-label="{{ariaLabel}}"
+			{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}
+		>
+			<svg class="eds-c-status-message__dismiss-icon" aria-hidden="true" focusable="false">
+				<title>{{svgTitle}}</title>
+				<use xlink:href="{{dismissIconURL}}"></use>
+			</svg>
+		</button>
+	</div>
+	{{/if}}
+</aside>

@@ -1,0 +1,127 @@
+{
+  "eds-c-header-new": {
+    "logo": {
+      "link": "/",
+      "srcSmall": "/img/logo.svg",
+      "srcLarge": "/img/logo.svg",
+      "alt": "Logo Header"
+    },
+    "headerNavigation": {
+      "navigationText": "Menu",
+      "iconMenu": "/img/icons/eds-i-menu-medium.svg#eds-i-menu-medium",
+      "navigationMain": {
+        "navigationAriaLabel": "example-nav-with-tray-dropdown",
+        "iconPath": "/img/icons/eds-i-chevron-down-small.svg#eds-i-chevron-down-small",
+        "iconPathSecondary": "#eds-i-chevron-right-small",
+        "navigationExpanderAriaLabel": "example-nav-expander-with-tray-dropdown",
+        "trayDropdown": false,
+        "navigationItems": [
+          {
+            "triggerText": "Introduction",
+            "triggerUrl": "Introduction",
+            "links": [
+              {
+                "linkText": "Introducing Dot-Public",
+                "linkUrl": "/introducing-dotpublic.html"
+              },
+              {
+                "linkText": "The Proposal",
+                "linkUrl": "the-proposal.html"
+              },
+              {
+                "linkText": "Situating Dot-Public",
+                "linkUrl": "/situating-dotpublic.html"
+              }
+            ]
+          },
+          {
+            "triggerText": "Deep dive",
+            "triggerUrl": "deep-dive",
+            "links": [
+              {
+                "linkText": "Model of Governance",
+                "linkUrl": "/model-of-governance.html"
+              },
+              {
+                "linkText": "Eligibility and Permissions",
+                "linkUrl": "/eligibility-and-permissions.html"
+              },
+              {
+                "linkText": "Trustworthy by choice",
+                "linkUrl": "/trustworthy-by-choice.html"
+              },
+              {
+                "linkText": "Cleaner digital tools",
+                "linkUrl": "/cleaner-digital-tools.html"
+              }
+            ]
+          },
+          {
+            "triggerText": "Delivery",
+            "triggerUrl": "delivery",
+            "links": [
+              {
+                "linkText": "The path forward",
+                "linkUrl": "/the-path-forward.html"
+              },
+              {
+                "linkText": "From theory to delivery",
+                "linkUrl": "/from-theory-to-delivery.html"
+              },
+              {
+                "linkText": "Delivery Stage One",
+                "linkUrl": "/delivery-stage-one.html"
+              }
+            ]
+          },
+          {
+            "triggerText": "About",
+            "triggerUrl": "about",
+            "links": [
+              {
+                "linkText": "About Dot-Public Ltd.",
+                "linkUrl": "/about-dot-public.html"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "headerNavigationMenu": {
+      "navigationMenuMain": [
+        {
+          "open": true,
+          "id": "navigationMenuMain-a",
+          "groupedContent": true,
+          "iconURL": "/img/icons/eds-i-chevron-down-small.svg#eds-i-chevron-down-small",
+          "title": "Introduction",
+          "content": "<ul><li><a href=\"/introducing-dotpublic.html\">Introducing Dot-Public</a></li><li><a href=\"the-proposal.html\">The Proposal</a></li><li><a href=\"/situating-dotpublic.html\">Situating Dot-Public</a></li></ul>"
+        },
+        {
+          "open": false,
+          "id": "navigationMenuMain-b",
+          "groupedContent": true,
+          "iconURL": "/img/icons/eds-i-chevron-down-small.svg#eds-i-chevron-down-small",
+          "title": "Deep dive",
+          "content": "<ul><li><a href=\"/model-of-governance.html\">Model of Governance</a></li><li><a href=\"/eligibility-and-permissions.html\">Eligibility and Permissions</a></li><li><a href=\"/trustworthy-by-choice.html\">Trustworthy by choice</a></li><li><a href=\"/cleaner-digital-tools.html\">Cleaner digital tools</a></li></ul>"
+        },
+        {
+          "open": false,
+          "id": "navigationMenuMain-c",
+          "groupedContent": false,
+          "iconURL": "/img/icons/eds-i-chevron-down-small.svg#eds-i-chevron-down-small",
+          "title": "Delivery",
+          "content": "<ul><li><a href=\"/the-path-forward.html\">The path forward</a></li><li><a href=\"/from-theory-to-delivery.html\">From theory to delivery</a></li><li><a href=\"/delivery-stage-one.html\">Delivery Stage One</a></li></ul>"
+        },
+        {
+          "open": false,
+          "id": "navigationMenuMain-test-d",
+          "groupedContent": false,
+          "iconURL": "/img/icons/eds-i-chevron-down-small.svg#eds-i-chevron-down-small",
+          "title": "About",
+          "content": "<ul><li><a href=\"/about-dot-public.html\">About Dot-Public Ltd.</a></li></ul>"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,75 @@
+<nav class="eds-c-navigation__expander-enhanced-but-no-js " data-eds-c-navigation-expander-nav aria-label="{{navigationExpanderAriaLabel}}">
+	<ul class="eds-c-navigation__menu">
+		{{#each navigationItems}}
+			<li>
+				<h3>{{triggerText}}</h3>
+				{{#if ../trayDropdown}}
+					<nav id="{{triggerUrl}}" class="eds-c-navigation__dropdown" aria-label="{{triggerText}}">
+						{{#if groups}}
+							{{#each groups}}
+								<div class="eds-c-navigation__dropdown-group">
+									<h4 class="eds-c-navigation__heading">{{heading}}</h4>
+									<ul class="eds-c-navigation__list">
+										{{#each links}}
+											<li class="eds-c-navigation__list-item">
+												<a href="{{linkUrl}}" class="eds-c-navigation__list-link"
+													{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}>
+													{{linkText}}
+												</a>
+											</li>
+										{{/each}}
+									</ul>
+								</div>
+							{{/each}}
+						{{else}}
+							<ul class="eds-c-navigation__list">
+								{{#if noDropdown}}
+									<li class="eds-c-navigation__list-item">
+										<a class="eds-c-navigation__list-link" href="{{triggerUrl}}">{{triggerText}}</a>
+									</li>
+								{{else}}
+									{{#each links}}
+										<li class="eds-c-navigation__list-item">
+											<a href="{{linkUrl}}"
+											   class="eds-c-navigation__list-link"
+												{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}>
+												{{linkText}}
+											</a>
+										</li>
+									{{/each}}
+								{{/if}}
+							</ul>
+						{{/if}}
+					</nav>
+				{{else}}
+					<nav id="{{triggerUrl}}" class="eds-c-navigation__dropdown" aria-label="{{triggerText}}">
+						<ul class="eds-c-navigation__list">
+							{{#if noDropdown}}
+								<li class="eds-c-navigation__list-item">
+									<a class="eds-c-navigation__list-link" href="{{triggerUrl}}">{{triggerText}}</a>
+								</li>
+							{{else}}
+								{{#each links}}
+									<li class="eds-c-navigation__list-item">
+										<a href="{{linkUrl}}"
+										   class="eds-c-navigation__list-link{{#if active}} eds-c-navigation__list-link--active{{/if}}"
+											{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}>
+											{{linkText}}
+											<svg class="eds-c-navigation__link-icon" aria-hidden="true" focusable="false">
+												<use xlink:href="{{../../iconPathSecondary}}"></use>
+											</svg>
+										</a>
+									</li>
+								{{/each}}
+							{{/if}}
+						</ul>
+					</nav>
+				{{/if}}
+			</li>
+		{{/each}}
+	</ul>
+</nav>
+
+
+
+

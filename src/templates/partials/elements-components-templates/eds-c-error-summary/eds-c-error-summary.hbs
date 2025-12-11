@@ -1,0 +1,21 @@
+<aside class="eds-c-error-summary" aria-labelledby="{{id}}">
+	<div class="eds-c-error-summary__icon">
+		<span class="eds-form__icon-error u-display-flex u-align-items-center">
+			<svg class="u-icon u-mr-4" width="22" height="22" aria-hidden="true" focusable="false">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.002 1c.702 0 1.375.279 1.871.775l8.35 8.353a2.646 2.646 0 0 1 .001 3.744l-8.353 8.353a2.646 2.646 0 0 1-3.742 0l-8.353-8.353a2.646 2.646 0 0 1 0-3.744l8.353-8.353.156-.142c.424-.362.952-.58 1.507-.625l.21-.008ZM12 14.5a1.5 1.5 0 0 0 0 3l.144-.007A1.5 1.5 0 0 0 12 14.5ZM12 6a1 1 0 0 0-1 1v5a1 1 0 0 0 2 0V7a1 1 0 0 0-1-1Z"/></svg>
+			</svg>
+		</span>
+	</div>
+	<div class="eds-c-error-summary__text">
+		<p class="eds-c-error-summary__title" id="{{id}}" tabindex="-1">{{title}}</p>
+		{{#if errors}}
+			<ul class="eds-c-error-summary__errors">
+				{{#each errors}}
+					<li>
+						<a href="#{{id}}">{{text}}</a>
+					</li>
+				{{/each}}
+			</ul>
+		{{/if}}
+	</div>
+</aside>

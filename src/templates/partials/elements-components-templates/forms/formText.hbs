@@ -1,0 +1,14 @@
+{{> elements-components-templates/forms/formLabel }}
+{{#if error}}
+	{{> elements-components-templates/forms/formError }}
+{{/if}}
+<input type="text" class="c-forms__input c-forms__input--text" {{> elements-components-templates/forms/formAttributes }}>
+{{#if datalist.options}}
+	{{#if datalist.id}}
+		<datalist id="{{datalist.id}}">
+			{{#each datalist.options}}
+				<option value="{{.}}"></option>
+			{{/each}}
+		</datalist>
+	{{/if}}
+{{/if}}

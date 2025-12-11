@@ -1,0 +1,29 @@
+<form class="eds-c-form"
+    {{#each formAttributes}}
+		{{name}}="{{value}}"
+	{{/each}}
+	{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}
+>
+    <div class="l-stack">
+        {{#with formHeading}}
+            <{{formHeadingTag}} {{#if formHeadingTagId}}id="{{formHeadingTagId}}"{{/if}}>
+                {{formHeadingTagContent}}
+            </{{formHeadingTag}}>
+        {{/with}}
+        {{#with errorSummary}}
+            {{> elements-components-templates/eds-c-error-summary/eds-c-error-summary }}
+        {{/with}}
+        {{#each inputs}}
+            {{> elements-components-templates/eds-c-input/eds-c-input }}
+        {{/each}}
+        <div class="{{#if uiSettings.buttonsSettings.stack}}l-stack{{else}}l-cluster{{/if}}" data-test="eds-c-form-buttons-container">
+            {{#if uiSettings.buttonsSettings.stack}}
+                <div class="eds-c-form__buttons-stack{{#if uiSettings.buttonsSettings.stackFullWidth}} eds-c-form__buttons-stack--full-width{{/if}}">
+            {{/if}}
+                {{#each buttons}}
+                    {{> elements-components-templates/eds-c-button/eds-c-button }}
+                {{/each}}
+            {{#if uiSettings.buttonsSettings.stack}}</div>{{/if}}
+        </div>
+    </div>
+</form>

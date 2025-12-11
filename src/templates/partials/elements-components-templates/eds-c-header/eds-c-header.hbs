@@ -1,0 +1,82 @@
+<header class="eds-c-header" {{#if variantDataAttribute}}{{variantDataAttribute}}{{else}}data-eds-c-header{{/if}}>
+    <div class="eds-c-header__container" data-eds-c-header-expander-anchor>
+        <div class="eds-c-header__brand">
+            {{#with logo}}
+                {{#if link}}
+                    <a href="{{link}}"
+                    	{{#if logo.dataTest}} data-test={{logo.dataTest}}{{/if}}
+											{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}>
+                        <img src="{{src}}" alt="{{alt}}">
+                    </a>
+                {{else}}
+                    <img src="{{src}}" alt="{{alt}}">
+                {{/if}}
+            {{/with}}
+        </div>
+
+        {{#if snid}}
+            {{#if snidTemplate}}
+                {{> (lookup . 'snidTemplate')}}
+            {{/if}}
+        {{else}}
+            {{#if headerAccount}}
+                {{#unless loggedIn}}
+                    {{#with loginLink}} 
+                        <a href="{{url}}" class="eds-c-header__link eds-c-header__link--static"
+													{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}>
+                            <svg class="eds-c-header__icon" width="24" height="24" aria-hidden="true" focusable="false">
+                                <use xlink:href="{{icon}}"></use>
+                            </svg><span>{{text}}</span>
+                        </a>
+                    {{/with}}
+                {{else}}
+                    <a href="#eds-c-header-account" class="eds-c-header__link" data-eds-c-header-expander data-eds-c-header-test-account-btn
+											{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}>
+                        <svg class="eds-c-header__icon" width="24" height="24" aria-hidden="true" focusable="false">
+                            <use xlink:href="{{loginLink.icon}}"></use>
+                        </svg><span>{{accountTitle}}</span>
+                    </a>
+                {{/unless}}
+            {{/if}}
+        {{/if}}
+    </div>
+
+    {{#with headerNavigation}}
+        <nav class="eds-c-header__nav" aria-label="header navigation">
+            <div class="eds-c-header__nav-container">
+                <div class="eds-c-header__item eds-c-header__item--menu">
+                   <a href="#eds-c-header-nav" class="eds-c-header__link" data-eds-c-header-expander>
+                        <svg class="eds-c-header__icon" width="24" height="24" aria-hidden="true" focusable="false">
+                            <use xlink:href="{{iconMenu}}"></use>
+                        </svg><span>{{navigationText}}</span>
+                    </a>
+                </div>
+
+                <div class="eds-c-header__item eds-c-header__item--inline-links">
+                    {{#each links}}
+                        <a class="eds-c-header__link" href="{{url}}"
+													{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}>
+                            {{text}}
+                        </a>
+                    {{/each}}
+                </div>
+
+                <div class="eds-c-header__link-container">
+                    {{#if searchText}}
+                        <div class="eds-c-header__item eds-c-header__item--divider">
+                            <a href="#eds-c-header-popup-search" class="eds-c-header__link" data-eds-c-header-expander data-eds-c-header-test-search-btn>
+                                <svg class="eds-c-header__icon" width="24" height="24" aria-hidden="true" focusable="false">
+                                    <use xlink:href="{{iconSearch}}"></use>
+                                </svg><span>{{searchText}}</span>
+                            </a>
+                        </div>
+                    {{/if}}
+                    {{#if cartTemplate}}
+                        {{> (lookup . 'cartTemplate')}}
+                    {{/if}}
+                </div>
+            </div>
+        </nav>
+    {{/with}}
+</header>
+

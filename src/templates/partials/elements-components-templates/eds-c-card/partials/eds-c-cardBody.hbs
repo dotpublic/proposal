@@ -1,0 +1,8 @@
+<div class="eds-c-card__body">
+	<div class="eds-c-card__content">
+		{{#if srOnlyHighlightText}}<span class="u-hide-sr-only">{{srOnlyHighlightText}}</span>{{/if}}
+		{{#if cardLabel}}<p class="eds-c-card__label">{{cardLabel}}</p>{{/if}}
+		<h2 class="eds-c-card__title{{#if titleSmall}} eds-c-card__title--small{{/if}}" {{#if ariaLevel}}aria-level="{{ariaLevel}}" {{/if}}><a href="{{linkUrl}}">{{title}}</a></h2>
+		<p class="eds-c-card__summary{{#if truncateSummary}} eds-c-card__summary--truncate-text{{/if}}">{{summary}}</p>
+	</div>
+</div>

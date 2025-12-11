@@ -1,0 +1,55 @@
+<nav aria-label="Pagination (Page {{currentPage}} of {{pageCount}})">
+    <ul class="eds-c-pagination">
+        {{#if prev.previousExists}}
+            <li class="eds-c-pagination__item eds-c-pagination__item--prev">
+                <a href="{{prev.previousLink}}" rel="prev" class="eds-c-pagination__link"
+									{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes dataAttributes=prev.dataAttributes}}
+                >
+                    <div class="eds-c-pagination__link-container">
+                        <svg class="eds-c-pagination__icon" aria-hidden="true" focusable="false">
+                            <use xlink:href="{{prev.previousIcon}}"></use>
+                        </svg>
+                        <span>Previous<span class="eds-c-pagination__visually-hidden"> page</span></span>
+                    </div>
+                </a>
+            </li>
+        {{/if}}
+        {{#each pages}}
+            {{#if active}}
+                <li class="eds-c-pagination__item">
+                    <a href="#" class="eds-c-pagination__link eds-c-pagination__link--active" 
+                        aria-label="Page {{number}}"
+                        aria-current="page"
+												{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}
+                    >
+                        {{number}}
+                    </a>
+                </li>
+            {{else if ellipsis}}
+                <li class="eds-c-pagination__item">&hellip;</li>
+            {{else}}
+                <li class="eds-c-pagination__item">
+                    <a href="{{link}}" class="eds-c-pagination__link" aria-label="Page {{number}}"
+											{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}
+                    >
+                        {{number}}
+                    </a>
+                </li>
+            {{/if}}
+        {{/each}}
+        {{#if next.nextExists}}
+            <li class="eds-c-pagination__item eds-c-pagination__item--next">
+                <a href="{{next.nextLink}}" rel="next" class="eds-c-pagination__link"
+									{{#with next}}{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}{{/with}}
+                >
+                    <div class="eds-c-pagination__link-container">
+                        <span>Next<span class="eds-c-pagination__visually-hidden"> page</span></span>
+                        <svg class="eds-c-pagination__icon" aria-hidden="true" focusable="false">
+                            <use xlink:href="{{next.nextIcon}}"></use>
+                        </svg>
+                    </div>
+                </a>
+            </li>
+        {{/if}}
+    </ul>
+</nav>

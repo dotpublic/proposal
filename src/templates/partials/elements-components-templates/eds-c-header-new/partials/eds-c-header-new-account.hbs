@@ -1,0 +1,24 @@
+<div class="eds-c-header-new-expander__action-dropdown" id="eds-c-header-new-account" data-eds-c-header-new-expander-append>
+    {{#with user}}
+        <div class="eds-c-header-new-expander__action-dropdown-section">
+            <div>
+                <span class="eds-c-header-new-expander__account-name">{{name}}</span>
+                <span class="eds-c-header-new-expander__account-email">{{email}}</span>
+            </div>
+        </div>
+    {{/with}}
+    {{#each sections}}
+        <div class="eds-c-header-new-expander__action-dropdown-section">
+            <div>
+                {{#if sectionName}}<p>{{sectionName}}</p>{{/if}}
+                <ul class="eds-c-header-new-expander__action-dropdown-links">
+                    {{#each sectionLinks}}
+                        <li>
+                            <a href="{{url}}" {{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}>{{text}}</a>
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>                 
+    {{/each}}
+</div>

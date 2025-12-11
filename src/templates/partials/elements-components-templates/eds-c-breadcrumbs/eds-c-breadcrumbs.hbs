@@ -1,0 +1,19 @@
+<nav aria-label="Breadcrumb" {{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}{{#if customClassname}} class="{{customClassname}}"{{/if}}>
+    <ol class="eds-c-breadcrumbs{{#if contrast}} eds-c-breadcrumbs--contrast{{/if}}" itemscope itemtype="https://schema.org/BreadcrumbList">
+        {{#each breadcrumbs}}
+            <li class="eds-c-breadcrumbs__item" {{#if id}} id="{{id}}"{{/if}} itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                {{#unless @last}}
+                    <a href="{{url}}" {{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }} class="eds-c-breadcrumbs__link" itemprop="item"><span itemprop="name">{{name}}</span>
+                    </a>
+                    <meta itemprop="position" content="{{position}}">
+                    <svg class="eds-c-breadcrumbs__icon" aria-hidden="true" focusable="false">
+                        <use xlink:href="{{../icon}}"></use>
+                    </svg>
+                {{else}}
+                    <span {{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }} itemprop="name" aria-current="location">{{name}}</span>
+                    <meta itemprop="position" content="{{position}}">
+                {{/unless}}
+            </li>
+        {{/each}}
+    </ol>
+</nav>

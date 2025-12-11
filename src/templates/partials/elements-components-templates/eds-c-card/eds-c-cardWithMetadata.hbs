@@ -1,0 +1,13 @@
+<div class="eds-c-card__inner{{#if backgroundColorWhite}} eds-c-card__inner--white-bg{{/if}}">    
+    {{> elements-components-templates/eds-c-card/partials/eds-c-cardBody }}
+    <div class="eds-c-card__metadata">
+        <div class="eds-c-card__metadata-list-wrapper">
+            {{#each metadata}}
+                <dl class="eds-c-card__metadata-list">
+                    <dt>{{title}}</dt>
+                    <dd class="eds-c-card__metadata-list-description">{{text}}</dd>
+                </dl>
+            {{/each}}
+        </div>
+    </div>
+</div>

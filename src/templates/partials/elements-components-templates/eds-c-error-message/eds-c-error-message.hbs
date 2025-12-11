@@ -1,0 +1,11 @@
+<div class="eds-c-error-message" id="error-{{errorInputId}}">
+	<span class="eds-c-form__icon-error">
+		<svg class="u-icon u-mr-4" width="24" height="24" aria-hidden="true" focusable="false">
+			<use xlink:href="{{icon}}"></use>
+		</svg>
+	</span>
+	<span>
+		<span {{#if screenReaderOnlyErrorPrefix}}class="u-hide-sr-only"{{/if}}>{{errorPrefix}}</span>
+		{{text}}
+	</span>
+</div>

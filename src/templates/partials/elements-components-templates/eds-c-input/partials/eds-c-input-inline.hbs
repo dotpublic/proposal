@@ -1,0 +1,8 @@
+<div class="eds-c-form__inline-fields{{#if uiSettings.nowrap}} eds-c-form__inline-fields--nowrap{{/if}}"{{#if uiSettings.gap}} style="--form-inline-gap: {{uiSettings.gap}}"{{/if}}>
+    {{#each inlineInputs}}
+        {{> elements-components-templates/eds-c-input/partials/eds-c-input-default }}
+    {{/each}}
+    {{#each buttons}}
+        {{> elements-components-templates/eds-c-button/eds-c-button }}
+    {{/each}}
+</div>

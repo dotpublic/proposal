@@ -1,0 +1,24 @@
+<div class="eds-c-form__field">
+	{{#if checkboxTitleText}}<span class="eds-c-checkbox__title">{{checkboxTitleText}}</span>{{/if}}
+	{{#if checkboxLink}}<a href="{{checkboxLink.url}}" class="eds-c-checkbox__link" {{#with checkboxLink}}{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}{{/with}}>{{checkboxLink.text}}</a>{{/if}}
+	{{#with hint}}
+		{{> elements-components-templates/eds-c-hint/eds-c-hint }}
+	{{/with}}
+	{{#with error}}
+		{{> elements-components-templates/eds-c-error-message/eds-c-error-message }}
+	{{/with}}
+	<input class="u-visually-hidden"
+		{{> elements-components-templates/eds-c-checkbox/eds-c-checkbox-attributes }}
+		{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}
+	>
+	{{#with label}}
+		{{> elements-components-templates/eds-c-label/eds-c-label required=../required inputId=../inputId}}
+	{{/with}}
+	{{#if inputs}}
+		<div class="eds-c-form__disclosure-box">
+			{{#each inputs}}
+				{{> (lookup . 'template')}}
+			{{/each}}
+		</div>
+	{{/if}}
+</div>

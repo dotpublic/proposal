@@ -1,0 +1,37 @@
+<div class="eds-c-footer__container">
+	{{#with navigation}}
+		<nav aria-label="footer navigation">
+			<ul class="eds-c-footer__links">
+				{{#each links}}
+					<li class="eds-c-footer__item">
+						{{#if url}}
+							<a class="eds-c-footer__link" href="{{url}}"
+								{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}>{{text}}</a>
+						{{/if}}
+						{{#if buttonProperties}}
+							<button class="eds-c-footer__link" {{{buttonProperties}}}
+								{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}><span class="eds-c-footer__button-text">{{text}}</span></button>
+						{{/if}}
+					</li>
+				{{/each}}
+			</ul>
+		</nav>
+	{{/with}}
+	{{#if userDebugInfo}}
+		{{#with userDebugInfo}}
+			<div class="eds-c-footer__user">
+				<p class="eds-c-footer__user-info">
+					{{#userDisplayName}}<span data-test="footer-user-login-status">Logged in as {{.}} - </span>{{/userDisplayName}}
+					{{#ipAddress}}<span data-test="footer-user-ip">{{.}}</span>{{/ipAddress}}
+				</p>
+				<p class="eds-c-footer__user-info" data-test="footer-business-partners">{{#businessPartners}}{{name}} ({{id}}) {{#unless @last}} - {{/unless}}{{/businessPartners}}{{^businessPartners}}Not affiliated{{/businessPartners}}</p>
+			</div>
+		{{/with}}
+	{{/if}}
+	{{#with image}}
+		<a href="{{link}}" class="eds-c-footer__link">
+			<img src="{{src}}" alt="{{alt}}" loading="lazy" width="200" height="20"/>
+		</a>
+	{{/with}}
+	<p class="eds-c-footer__legal" data-test="copyright">&copy; {{currentYear}} Springer Nature</p>
+</div>

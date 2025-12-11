@@ -1,0 +1,11 @@
+id="{{inputId}}"
+name="{{name}}"
+{{#if value}} value="{{value}}"{{/if}}
+{{#if error}} invalid aria-invalid="true" aria-describedby="error-{{error.errorInputId}}"{{/if}}
+{{#if required}} required aria-required="true"{{/if}}
+{{#if disabled}} disabled{{/if}}
+{{#if multiple}} multiple{{/if}}
+{{#if autofocus}} autofocus{{/if}}
+{{#if size}} size="{{size}}"{{/if}}
+
+{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}

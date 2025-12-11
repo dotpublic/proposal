@@ -1,0 +1,17 @@
+<div class="eds-c-radio">
+    <input class="u-visually-hidden" 
+		{{> elements-components-templates/eds-c-radio/eds-c-radio-attributes }}
+			{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}
+	>               
+	{{#with label}}
+		{{> elements-components-templates/eds-c-label/eds-c-label required=../required inputId=../inputId}}
+	{{/with}}
+	{{#if inputs}}
+        <div class="eds-c-form__disclosure-box">            
+            {{#each inputs}}
+                {{> (lookup . 'template')}}
+            {{/each}}
+        </div>
+	{{/if}}
+</div>
+                                                                                            

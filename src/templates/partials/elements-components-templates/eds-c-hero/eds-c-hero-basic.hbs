@@ -1,0 +1,21 @@
+{{#> eds-c-hero}} 
+    <div class="u-container eds-c-hero__content u-pt-32 u-pb-32">
+        {{#with breadcrumbs}}
+            {{> elements-components-templates/eds-c-breadcrumbs/eds-c-breadcrumbs }}
+        {{/with}}  
+        {{#with title}}
+            {{> elements-components-templates/eds-c-hero/partials/eds-c-hero-title }}
+        {{/with}}
+        {{#with subtitle}}
+            {{> elements-components-templates/eds-c-hero/partials/eds-c-hero-subtitle }}
+        {{/with}}
+        {{#with metadata}}
+            {{> elements-components-templates/eds-c-hero/partials/eds-c-hero-metadata }}
+        {{/with}}
+        <div class="eds-c-hero__buttons-container">
+            {{#each buttons}}
+                {{> elements-components-templates/eds-c-button/eds-c-button }}
+            {{/each}}
+        </div>
+    </div>
+{{/eds-c-hero}}

@@ -1,0 +1,19 @@
+<search class="eds-c-header-new-expander__search" role="search"{{#if headerSearchAriaLabel}} aria-label="{{headerSearchAriaLabel}}"{{/if}}>
+    <form class="eds-c-form" method="{{method}}" action="{{url}}" {{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}>
+        <div class="l-cluster{{#if advancedSearch}} l-cluster--middle{{else}} l-cluster--bottom{{/if}}">
+            <div class="u-flex-grow u-mt-24">
+                {{#with searchInput}}
+                    {{> elements-components-templates/eds-c-input/eds-c-input }}
+                {{/with}} 
+                {{#with advancedSearch}}
+                    <a href="{{url}}" class="eds-c-header-new-expander__search--advanced-link u-link-wide-area" {{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}>{{text}}</a>
+                {{/with}}
+            </div>
+            <div class="eds-c-header-new-expander__search-btn">
+                {{#with searchBtn}}
+                    {{> elements-components-templates/eds-c-button/eds-c-button }}
+                {{/with}}                          
+            </div>
+        </div>
+    </form>
+</search>

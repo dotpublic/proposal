@@ -1,0 +1,28 @@
+<div 
+    class="eds-c-form__field{{#if uiSettings.cssClass}} {{uiSettings.cssClass}}{{/if}}"
+    {{#if hidden}} hidden{{/if}}
+    >
+	{{#with label}}
+		{{> elements-components-templates/eds-c-label/eds-c-label required=../required inputId=../inputId}}
+	{{/with}}
+    {{#with hint}}
+		{{> elements-components-templates/eds-c-hint/eds-c-hint }}
+	{{/with}}
+	{{#with error}}
+		{{> elements-components-templates/eds-c-error-message/eds-c-error-message }}
+	{{/with}}
+    <input
+        class="eds-c-form__input" 
+        {{> elements-components-templates/eds-c-input/partials/eds-c-input-attributes }}
+			{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}
+    >
+    {{#if datalist.options}}
+        {{#if datalist.id}}
+            <datalist id="{{datalist.id}}">
+                {{#each datalist.options}}
+                    <option value="{{.}}"></option>
+                {{/each}}
+            </datalist>
+        {{/if}}
+    {{/if}}
+</div>

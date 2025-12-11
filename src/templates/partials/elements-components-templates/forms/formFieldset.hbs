@@ -1,0 +1,8 @@
+<{{#if legend}}fieldset{{else}}div{{/if}} class="c-forms__fieldset">
+	{{#if legend}}
+		<legend class="c-forms__legend">{{{legend}}}</legend>
+	{{/if}}
+	{{#each fields}}
+		{{> elements-components-templates/forms/formField }}
+	{{/each}}
+</{{#if legend}}fieldset{{else}}div{{/if}}>

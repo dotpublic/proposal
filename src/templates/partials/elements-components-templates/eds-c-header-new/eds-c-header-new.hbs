@@ -1,0 +1,53 @@
+<header class="eds-c-header-new" {{#if variantDataAttribute}}{{variantDataAttribute}}{{else}}data-eds-c-header-new{{/if}}>
+    <div class="eds-c-header-new__container" data-eds-c-header-new-expander-anchor>
+        {{#with logo}}
+            {{> elements-components-templates/eds-c-header-new/partials/eds-c-header-new-logo navigationMain=../headerNavigation.navigationMain}}
+        {{/with}}
+
+        {{#with headerNavigation}}
+            {{#if navigationMain}}
+                <div class="eds-c-header-new__main-nav-container eds-c-header-new__item--divider">
+                    {{#with navigationMain}}
+                        {{> elements-components-templates/eds-c-navigation/eds-c-navigation }}
+                    {{/with}}
+                </div>
+            {{/if}}
+            {{#if navigationActionItems}}
+                <div class="eds-c-header-new__action-items-panel">
+                    <div data-eds-c-header-new-aria-live-announcements class="u-hide-sr-only" aria-live="polite" aria-atomic="true"></div>
+                    {{#each navigationActionItems}}
+                        <div class="eds-c-header-new__action-items{{#if cssClass}} {{cssClass}}{{/if}}">
+                            <a href="{{#if url}}{{url}}{{else}}#{{id}}{{/if}}" class="eds-c-header-new__link"
+                            {{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }} data-eds-c-header-new-expander data-eds-c-header-new-js="#{{id}}">
+                                <svg class="eds-c-header-new__icon" width="24" height="24" aria-hidden="true" focusable="false">
+                                    <use xlink:href="{{iconUrl}}"></use>
+                                </svg>
+                                {{#if cartCountAriaLabel}}
+                                    <span class="eds-c-header-new__action-items-count eds-c-header-new__action-items-count--cart{{#unless cartCount}} u-display-none{{/unless}}" data-eds-c-header-new-cart-count aria-hidden="true">{{cartCount}}</span>
+                                    <span class="u-hide-sr-only" data-eds-c-header-new-cart-aria-label>{{cartCountAriaLabel}}</span>
+                                {{/if}}
+                                {{#if notificationsCountAriaLabel}} 
+                                    <span class="eds-c-header-new__action-items-count eds-c-header-new__action-items-count--notifications{{#unless ../../headerYourWork.notifications.notificationsCount}} u-display-none{{/unless}}" data-eds-c-header-new-notifications-count aria-hidden="true">{{../../headerYourWork.notifications.notificationsCount}}</span>
+                                    <span class="u-hide-sr-only" data-eds-c-header-new-notification-aria-label>{{notificationsCountAriaLabel}}.</span>
+                                {{/if}}
+                                <span {{#if cartCountAriaLabel}}aria-hidden="true"{{/if}}>
+                                    {{text}}
+                                </span>
+                            </a>
+                        </div>
+                    {{/each}}
+                </div>
+            {{/if}}
+            {{#if navigationMain}}
+                <div class="eds-c-header-new__mobile-menu">
+                    <a href="#eds-c-header-new__mobile-menu" class="eds-c-header-new__link" data-eds-c-header-new-js="#eds-c-header-new__mobile-menu" data-eds-c-header-new-expander>
+                        <svg class="eds-c-header-new__icon" width="24" height="24" aria-hidden="true" focusable="false">
+                            <use xlink:href="{{iconMenu}}"></use>
+                        </svg>
+                        <span>{{navigationText}}</span>
+                    </a>
+                </div>
+            {{/if}}
+        {{/with}}
+    </div>
+</header>

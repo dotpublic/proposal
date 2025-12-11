@@ -1,0 +1,19 @@
+<div class="eds-c-header-new-expander__action-dropdown" id="eds-c-header-new-your-work" data-eds-c-header-new-expander-append>
+    {{#with notifications}}
+        {{> elements-components-templates/eds-c-header-new/partials/eds-c-header-new-notifications }}
+    {{/with}}
+    {{#each sections}}
+        <div class="eds-c-header-new-expander__action-dropdown-section">
+            <div>
+                {{#if sectionName}}<p>{{sectionName}}</p>{{/if}}
+                <ul class="eds-c-header-new-expander__action-dropdown-links">
+                    {{#each sectionLinks}}
+                        <li>
+                            <a href="{{url}}" {{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}>{{text}}</a>
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>                 
+    {{/each}}
+</div>

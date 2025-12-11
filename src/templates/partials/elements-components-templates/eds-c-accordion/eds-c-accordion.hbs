@@ -1,0 +1,20 @@
+<div class="eds-c-accordion">
+	<div class="eds-c-accordion__button-container">
+		<button class="eds-c-accordion__button" type="button" data-eds-c-accordion 
+			{{#if open}}aria-expanded="true"{{else}}aria-expanded="false"{{/if}}
+			aria-controls="eds-c-accordion-content-{{id}}" id="{{id}}"
+			{{> elements-components-templates/eds-c-data-attributes/eds-c-data-attributes }}>
+			<div class="eds-c-accordion__header" {{#if headingLevel}}role="heading" aria-level="{{headingLevel}}"
+				{{/if}}>
+				<span class="eds-c-accordion__title">{{title}}</span>
+				<svg class="eds-c-accordion__icon" aria-hidden="true" focusable="false">
+					<use xlink:href="{{iconURL}}"></use>
+				</svg>
+			</div>
+		</button>
+		<div class="eds-c-accordion__strip"></div>
+	</div>
+	<div id="eds-c-accordion-content-{{id}}" aria-labelledby="{{id}}"
+		class="eds-c-accordion__content{{#if groupedContent}} eds-c-accordion__content--grouped{{/if}}">{{{content}}}
+	</div>
+</div>
