@@ -1,36 +1,21 @@
-<div class="language-switcher" style="padding: 1rem; background: #f5f5f5; border-bottom: 1px solid #ddd;">
-  <nav aria-label="Language selector">
-    <span style="margin-right: 0.5rem; font-weight: bold;">
+<div class="app-language-switcher">
+  <nav aria-label="{{#if (eq page.lang "en")}}{{ en.languageSwitcher.label }}{{/if}}{{#if (eq page.lang "es")}}{{ es.languageSwitcher.label }}{{/if}}{{#if (eq page.lang "ga")}}{{ ga.languageSwitcher.label }}{{/if}}">
+    <span class="app-language-switcher__label" aria-hidden="true">
       {{#if (eq page.lang "en")}}{{ en.languageSwitcher.label }}{{/if}}
       {{#if (eq page.lang "es")}}{{ es.languageSwitcher.label }}{{/if}}
       {{#if (eq page.lang "ga")}}{{ ga.languageSwitcher.label }}{{/if}}
     </span>
     
-    {{! No-JS: Simple links }}
-    <ul class="language-switcher-links" style="display: inline-block; list-style: none; padding: 0; margin: 0;">
-      <li style="display: inline; margin: 0 0.5rem;">
-        <a href="/proposal/index.html" {{#if (eq page.lang "en")}}aria-current="page" style="font-weight: bold;"{{/if}}>English</a>
+    <ul class="app-language-switcher__links">
+      <li class="app-language-switcher__item">
+        <a href="/proposal/index.html" {{#if (eq page.lang "en")}}aria-current="page" class="app-language-switcher__link app-language-switcher__link--active"{{else}}class="app-language-switcher__link"{{/if}} hreflang="en" lang="en">English</a>
       </li>
-      <li style="display: inline; margin: 0 0.5rem;">
-        <a href="/proposal/es/index.html" {{#if (eq page.lang "es")}}aria-current="page" style="font-weight: bold;"{{/if}}>Español</a>
+      <li class="app-language-switcher__item">
+        <a href="/proposal/es/index.html" {{#if (eq page.lang "es")}}aria-current="page" class="app-language-switcher__link app-language-switcher__link--active"{{else}}class="app-language-switcher__link"{{/if}} hreflang="es" lang="es">Español</a>
       </li>
-      <li style="display: inline; margin: 0 0.5rem;">
-        <a href="/proposal/ga/index.html" {{#if (eq page.lang "ga")}}aria-current="page" style="font-weight: bold;"{{/if}}>Gaeilge</a>
+      <li class="app-language-switcher__item">
+        <a href="/proposal/ga/index.html" {{#if (eq page.lang "ga")}}aria-current="page" class="app-language-switcher__link app-language-switcher__link--active"{{else}}class="app-language-switcher__link"{{/if}} hreflang="ga" lang="ga">Gaeilge</a>
       </li>
     </ul>
-    
-    {{! JS-enhanced: Dropdown (hidden by default) }}
-    <div class="language-switcher-select" style="display: none;">
-      <label for="language-select" class="u-visually-hidden">
-        {{#if (eq page.lang "en")}}{{ en.languageSwitcher.label }}{{/if}}
-        {{#if (eq page.lang "es")}}{{ es.languageSwitcher.label }}{{/if}}
-        {{#if (eq page.lang "ga")}}{{ ga.languageSwitcher.label }}{{/if}}
-      </label>
-      <select id="language-select" style="padding: 0.5rem;" data-current-lang="{{ page.lang }}">
-        <option value="en" {{#if (eq page.lang "en")}}selected{{/if}}>English</option>
-        <option value="es" {{#if (eq page.lang "es")}}selected{{/if}}>Español</option>
-        <option value="ga" {{#if (eq page.lang "ga")}}selected{{/if}}>Gaeilge</option>
-      </select>
-    </div>
   </nav>
 </div>
