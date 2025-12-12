@@ -1,11 +1,37 @@
 import handlebarsPlugin from '@11ty/eleventy-plugin-handlebars';
 import { EleventyI18nPlugin } from "@11ty/eleventy";
 import Handlebars from "handlebars";
+import markdownIt from 'markdown-it';
+import markdownItAttrs from 'markdown-it-attrs';
+import { readFileSync } from 'fs';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export default function(eleventyConfig) {
   // Register Handlebars helpers before adding the plugin
   Handlebars.registerHelper("eq", function(a, b) {
     return a === b;
+  });
+
+  // Helper to render markdown content
+  Handlebars.registerHelper("markdown", function(lang, filename) {
+    const md = markdownIt({
+      html: true,
+      linkify: true,
+      typographer: true
+    }).use(markdownItAttrs);
+    
+    const contentPath = join(__dirname, 'src', lang, 'content', filename);
+    try {
+      const content = readFileSync(contentPath, 'utf8');
+      return new Handlebars.SafeString(md.render(content));
+    } catch (err) {
+      console.error(`Error loading markdown: ${contentPath}`, err.message);
+      return '';
+    }
   });
 
   // Add i18n plugin
@@ -26,6 +52,9 @@ export default function(eleventyConfig) {
 
   // Ignore layout file from being processed as a template
   eleventyConfig.ignores.add('src/templates/layout.hbs');
+  
+  // Ignore content markdown files - they're included via the markdown helper
+  eleventyConfig.ignores.add('src/*/content/**/*.md');
 
   // Passthrough copy for static assets
   eleventyConfig.addPassthroughCopy('src/assets/img');
