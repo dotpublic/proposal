@@ -43,11 +43,16 @@ export default function(eleventyConfig) {
   // Add Handlebars plugin
   eleventyConfig.addPlugin(handlebarsPlugin);
 
-  // Before build: copy Elements templates
-  eleventyConfig.on('eleventy.before', async () => {
-    const { execSync } = await import('child_process');
-    console.log('📦 Copying Elements component templates...');
-    execSync('node ./takeElementsTemplates.js', { stdio: 'inherit' });
+  // Before build: copy Elements templates (only once, not on watch)
+  let hasRunTemplatesCopy = false;
+  eleventyConfig.on('eleventy.before', async ({ runMode }) => {
+    // Only run on initial build, not on watch rebuilds
+    if (!hasRunTemplatesCopy) {
+      const { execSync } = await import('child_process');
+      console.log('📦 Copying Elements component templates...');
+      execSync('node ./takeElementsTemplates.js', { stdio: 'inherit' });
+      hasRunTemplatesCopy = true;
+    }
   });
 
   // Ignore layout file from being processed as a template
@@ -55,6 +60,9 @@ export default function(eleventyConfig) {
   
   // Ignore content markdown files - they're included via the markdown helper
   eleventyConfig.ignores.add('src/*/content/**/*.md');
+  
+  // Ignore Elements component templates to prevent infinite rebuild loop
+  eleventyConfig.ignores.add('src/templates/partials/elements-components-templates/**');
 
   // Passthrough copy for static assets
   eleventyConfig.addPassthroughCopy('src/assets/img');
@@ -125,6 +133,9 @@ export default function(eleventyConfig) {
     },
     templateFormats: ['hbs', 'html', 'md'],
     htmlTemplateEngine: 'hbs',
-    markdownTemplateEngine: 'hbs'
+    markdownTemplateEngine: 'hbs',
+    watchIgnores: [
+      'src/templates/partials/elements-components-templates/**'
+    ]
   };
 }
