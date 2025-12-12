@@ -1,29 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ page.lang }}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel='stylesheet' href='/css/core.css'/>
-  <link rel='stylesheet' href='./css/enhanced.css' id="enhanced-stylesheet" media="only screen and (-webkit-min-device-pixel-ratio:0) and (min-color-index:0), (-ms-high-contrast: none), only all and (min--moz-device-pixel-ratio:0) and (min-resolution: 3e1dpcm)" />
+  <link rel='stylesheet' href='/proposal/css/core.css'/>
+  <link rel='stylesheet' href='/proposal/css/enhanced.css' id="enhanced-stylesheet" media="only screen and (-webkit-min-device-pixel-ratio:0) and (min-color-index:0), (-ms-high-contrast: none), only all and (min--moz-device-pixel-ratio:0) and (min-resolution: 3e1dpcm)" />
 	<script>(function(e) {
 		var t = e.documentElement, n = e.implementation;
 		t.className = 'js';
 	})(document);</script>
-  <title>Proposal</title>
+  <title>
+    {{#if (eq page.lang "en")}}{{ en.title }}{{/if}}
+    {{#if (eq page.lang "es")}}{{ es.title }}{{/if}}
+    {{#if (eq page.lang "ga")}}{{ ga.title }}{{/if}}
+  </title>
 </head>
 <body>
-    {{#with (lookup data "eds-c-header-new")}}
+    {{> language-switcher }}
+    
+    {{#if (eq page.lang "es")}}
+      {{#with (lookup es "eds-c-header-new")}}
         <div class="eds-c-header__wrapper">
             {{> elements-components-templates/eds-c-header-new/eds-c-header-new}}
         </div>
-    {{/with}}
+      {{/with}}
+    {{else if (eq page.lang "ga")}}
+      {{#with (lookup ga "eds-c-header-new")}}
+        <div class="eds-c-header__wrapper">
+            {{> elements-components-templates/eds-c-header-new/eds-c-header-new}}
+        </div>
+      {{/with}}
+    {{else}}
+      {{#with (lookup en "eds-c-header-new")}}
+        <div class="eds-c-header__wrapper">
+            {{> elements-components-templates/eds-c-header-new/eds-c-header-new}}
+        </div>
+      {{/with}}
+    {{/if}}
+    
     <main class="app-main">
         <div class="u-container app-main__container">
             {{{ content }}}
         </div>
     </main>
 
-    {{#with (lookup data "eds-c-header-new")}}
+    {{#if (eq page.lang "es")}}
+      {{#with (lookup es "eds-c-header-new")}}
         {{#with headerNavigation.navigationMain}}
             <div class="u-js-hide">
                 <div class="u-container">
@@ -36,7 +58,38 @@
                 {{> elements-components-templates/eds-c-header-new/partials/eds-c-header-new-navigation-menu}}
             </div>
         {{/with}}
-    {{/with}}
+      {{/with}}
+    {{else if (eq page.lang "ga")}}
+      {{#with (lookup ga "eds-c-header-new")}}
+        {{#with headerNavigation.navigationMain}}
+            <div class="u-js-hide">
+                <div class="u-container">
+                    {{> elements-components-templates/eds-c-navigation/eds-c-navigation-expander}}
+                </div>
+            </div>
+        {{/with}}
+        {{#with headerNavigationMenu}}
+            <div class="u-container">
+                {{> elements-components-templates/eds-c-header-new/partials/eds-c-header-new-navigation-menu}}
+            </div>
+        {{/with}}
+      {{/with}}
+    {{else}}
+      {{#with (lookup en "eds-c-header-new")}}
+        {{#with headerNavigation.navigationMain}}
+            <div class="u-js-hide">
+                <div class="u-container">
+                    {{> elements-components-templates/eds-c-navigation/eds-c-navigation-expander}}
+                </div>
+            </div>
+        {{/with}}
+        {{#with headerNavigationMenu}}
+            <div class="u-container">
+                {{> elements-components-templates/eds-c-header-new/partials/eds-c-header-new-navigation-menu}}
+            </div>
+        {{/with}}
+      {{/with}}
+    {{/if}}
 
     <footer class="app-footer">
         <div class="app-footer__container">

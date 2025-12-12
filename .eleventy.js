@@ -1,6 +1,19 @@
 import handlebarsPlugin from '@11ty/eleventy-plugin-handlebars';
+import { EleventyI18nPlugin } from "@11ty/eleventy";
+import Handlebars from "handlebars";
 
 export default function(eleventyConfig) {
+  // Register Handlebars helpers before adding the plugin
+  Handlebars.registerHelper("eq", function(a, b) {
+    return a === b;
+  });
+
+  // Add i18n plugin
+  eleventyConfig.addPlugin(EleventyI18nPlugin, {
+    defaultLanguage: "en",
+    errorMode: "allow-fallback"
+  });
+
   // Add Handlebars plugin
   eleventyConfig.addPlugin(handlebarsPlugin);
 
@@ -75,11 +88,11 @@ export default function(eleventyConfig) {
   return {
     pathPrefix: '/proposal/',
     dir: {
-      input: 'src/templates',
+      input: 'src',
       output: 'docs',
-      includes: 'partials',
-      layouts: '.',
-      data: '../_data'
+      includes: 'templates/partials',
+      layouts: 'templates',
+      data: '_data'
     },
     templateFormats: ['hbs', 'html', 'md'],
     htmlTemplateEngine: 'hbs',
