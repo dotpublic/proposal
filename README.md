@@ -5,7 +5,7 @@ A static site for the Dot-Public proposal, built with [Eleventy](https://www.11t
 ## Tech Stack
 
 - **Static Site Generator**: Eleventy 3.0
-- **Templating**: Handlebars
+- **Templating**: Handlebars + Markdown for content
 - **CSS**: SCSS (compiled via Rollup)
 - **JavaScript**: Bundled with Rollup
 - **Design System**: [@springernature/elements](https://www.npmjs.com/package/@springernature/elements)
@@ -14,17 +14,38 @@ A static site for the Dot-Public proposal, built with [Eleventy](https://www.11t
 
 ```
 ├── src/
-│   ├── _data/           # Data files (navigation, etc.)
+│   ├── _data/                    # Data files (navigation, translations)
+│   │   ├── en.json               # English translations & navigation
+│   │   ├── es.json               # Spanish translations & navigation
+│   │   └── ga.json               # Irish translations & navigation
+│   ├── en/                       # English content
+│   │   ├── content/              # Markdown content files
+│   │   │   ├── index.md
+│   │   │   ├── introducing-dotpublic.md
+│   │   │   └── ...               # Other page content
+│   │   └── pages/                # Handlebars page templates
+│   │       ├── index.hbs
+│   │       ├── introducing-dotpublic.hbs
+│   │       └── ...               # Other page templates
+│   ├── es/                       # Spanish content (same structure as en/)
+│   ├── ga/                       # Irish content (same structure as en/)
 │   ├── assets/
-│   │   ├── img/         # Images
-│   │   ├── js/          # JavaScript source
-│   │   └── scss/        # SCSS stylesheets
+│   │   ├── img/                  # Images
+│   │   ├── js/
+│   │   │   └── main.js           # JavaScript source
+│   │   └── scss/
+│   │       ├── core.scss         # Core styles
+│   │       └── enhanced.scss     # Enhanced styles
 │   └── templates/
-│       ├── pages/       # Page templates (.hbs)
-│       ├── partials/    # Reusable components
-│       └── layout.hbs   # Base layout
-├── docs/                # Build output (GitHub Pages)
-└── .eleventy.js         # Eleventy configuration
+│       ├── layout.hbs            # Base layout template
+│       └── partials/             # Reusable components
+│           ├── language-switcher.hbs
+│           └── elements-components-templates/  # Elements design system components
+├── docs/                         # Build output (GitHub Pages)
+├── .eleventy.js                  # Eleventy configuration
+├── rollup.config.js              # JavaScript bundling config
+├── babel.config.json             # Babel configuration
+└── package.json                  # Dependencies & scripts
 ```
 
 ## Getting Started
