@@ -1,18 +1,68 @@
 import handlebarsPlugin from '@11ty/eleventy-plugin-handlebars';
+import { EleventyI18nPlugin } from "@11ty/eleventy";
+import Handlebars from "handlebars";
+import markdownIt from 'markdown-it';
+import markdownItAttrs from 'markdown-it-attrs';
+import { readFileSync } from 'fs';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export default function(eleventyConfig) {
+  // Register Handlebars helpers before adding the plugin
+  Handlebars.registerHelper("eq", function(a, b) {
+    return a === b;
+  });
+
+  // Helper to render markdown content
+  Handlebars.registerHelper("markdown", function(lang, filename) {
+    const md = markdownIt({
+      html: true,
+      linkify: true,
+      typographer: true
+    }).use(markdownItAttrs);
+    
+    const contentPath = join(__dirname, 'src', lang, 'content', filename);
+    try {
+      const content = readFileSync(contentPath, 'utf8');
+      return new Handlebars.SafeString(md.render(content));
+    } catch (err) {
+      console.error(`Error loading markdown: ${contentPath}`, err.message);
+      return '';
+    }
+  });
+
+  // Add i18n plugin
+  eleventyConfig.addPlugin(EleventyI18nPlugin, {
+    defaultLanguage: "en",
+    errorMode: "allow-fallback"
+  });
+
   // Add Handlebars plugin
   eleventyConfig.addPlugin(handlebarsPlugin);
 
-  // Before build: copy Elements templates
-  eleventyConfig.on('eleventy.before', async () => {
-    const { execSync } = await import('child_process');
-    console.log('📦 Copying Elements component templates...');
-    execSync('node ./takeElementsTemplates.js', { stdio: 'inherit' });
+  // Before build: copy Elements templates (only once, not on watch)
+  let hasRunTemplatesCopy = false;
+  eleventyConfig.on('eleventy.before', async ({ runMode }) => {
+    // Only run on initial build, not on watch rebuilds
+    if (!hasRunTemplatesCopy) {
+      const { execSync } = await import('child_process');
+      console.log('📦 Copying Elements component templates...');
+      execSync('node ./takeElementsTemplates.js', { stdio: 'inherit' });
+      hasRunTemplatesCopy = true;
+    }
   });
 
   // Ignore layout file from being processed as a template
   eleventyConfig.ignores.add('src/templates/layout.hbs');
+  
+  // Ignore content markdown files - they're included via the markdown helper
+  eleventyConfig.ignores.add('src/*/content/**/*.md');
+  
+  // Ignore Elements component templates to prevent infinite rebuild loop
+  eleventyConfig.ignores.add('src/templates/partials/elements-components-templates/**');
 
   // Passthrough copy for static assets
   eleventyConfig.addPassthroughCopy('src/assets/img');
@@ -75,14 +125,17 @@ export default function(eleventyConfig) {
   return {
     pathPrefix: '/proposal/',
     dir: {
-      input: 'src/templates',
+      input: 'src',
       output: 'docs',
-      includes: 'partials',
-      layouts: '.',
-      data: '../_data'
+      includes: 'templates/partials',
+      layouts: 'templates',
+      data: '_data'
     },
     templateFormats: ['hbs', 'html', 'md'],
     htmlTemplateEngine: 'hbs',
-    markdownTemplateEngine: 'hbs'
+    markdownTemplateEngine: 'hbs',
+    watchIgnores: [
+      'src/templates/partials/elements-components-templates/**'
+    ]
   };
 }

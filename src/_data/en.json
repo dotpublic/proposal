@@ -1,4 +1,9 @@
 {
+  "locale": "en",
+  "title": "Dot-Public Proposal",
+  "languageSwitcher": {
+    "label": "Language"
+  },
   "eds-c-header-new": {
     "logo": {
       "link": "/proposal/",

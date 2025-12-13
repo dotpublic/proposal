@@ -1,0 +1,21 @@
+<div class="app-language-switcher">
+  <nav aria-label="{{#if (eq page.lang "en")}}{{ en.languageSwitcher.label }}{{/if}}{{#if (eq page.lang "es")}}{{ es.languageSwitcher.label }}{{/if}}{{#if (eq page.lang "ga")}}{{ ga.languageSwitcher.label }}{{/if}}">
+    <span class="app-language-switcher__label" aria-hidden="true">
+      {{#if (eq page.lang "en")}}{{ en.languageSwitcher.label }}{{/if}}
+      {{#if (eq page.lang "es")}}{{ es.languageSwitcher.label }}{{/if}}
+      {{#if (eq page.lang "ga")}}{{ ga.languageSwitcher.label }}{{/if}}
+    </span>
+    
+    <ul class="app-language-switcher__links">
+      <li class="app-language-switcher__item">
+        <a href="/proposal/index.html" {{#if (eq page.lang "en")}}aria-current="page" class="app-language-switcher__link app-language-switcher__link--active"{{else}}class="app-language-switcher__link"{{/if}} hreflang="en" lang="en">English</a>
+      </li>
+      <li class="app-language-switcher__item">
+        <a href="/proposal/es/index.html" {{#if (eq page.lang "es")}}aria-current="page" class="app-language-switcher__link app-language-switcher__link--active"{{else}}class="app-language-switcher__link"{{/if}} hreflang="es" lang="es">Español</a>
+      </li>
+      <li class="app-language-switcher__item">
+        <a href="/proposal/ga/index.html" {{#if (eq page.lang "ga")}}aria-current="page" class="app-language-switcher__link app-language-switcher__link--active"{{else}}class="app-language-switcher__link"{{/if}} hreflang="ga" lang="ga">Gaeilge</a>
+      </li>
+    </ul>
+  </nav>
+</div>

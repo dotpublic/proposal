@@ -1,0 +1,132 @@
+{
+  "locale": "es",
+  "title": "Propuesta Dot-Public",
+  "languageSwitcher": {
+    "label": "Idioma"
+  },
+  "eds-c-header-new": {
+    "logo": {
+      "link": "/proposal/",
+      "srcSmall": "/proposal/img/logo.svg",
+      "srcLarge": "/proposal/img/logo.svg",
+      "alt": "Logo Header"
+    },
+    "headerNavigation": {
+      "navigationText": "Menú",
+      "iconMenu": "/proposal/img/icons/eds-i-menu-medium.svg#eds-i-menu-medium",
+      "navigationMain": {
+        "navigationAriaLabel": "example-nav-with-tray-dropdown",
+        "iconPath": "/proposal/img/icons/eds-i-chevron-down-small.svg#eds-i-chevron-down-small",
+        "iconPathSecondary": "#eds-i-chevron-right-small",
+        "navigationExpanderAriaLabel": "example-nav-expander-with-tray-dropdown",
+        "trayDropdown": false,
+        "navigationItems": [
+          {
+            "triggerText": "Introducción",
+            "triggerUrl": "Introduccion",
+            "links": [
+              {
+                "linkText": "Presentando Dot-Public",
+                "linkUrl": "/proposal/es/introducing-dotpublic.html"
+              },
+              {
+                "linkText": "La Propuesta",
+                "linkUrl": "/proposal/es/the-proposal.html"
+              },
+              {
+                "linkText": "Situando Dot-Public",
+                "linkUrl": "/proposal/es/situating-dotpublic.html"
+              }
+            ]
+          },
+          {
+            "triggerText": "Profundización",
+            "triggerUrl": "profundizacion",
+            "links": [
+              {
+                "linkText": "Modelo de Gobernanza",
+                "linkUrl": "/proposal/es/model-of-governance.html"
+              },
+              {
+                "linkText": "Elegibilidad y Permisos",
+                "linkUrl": "/proposal/es/eligibility-and-permissions.html"
+              },
+              {
+                "linkText": "Confiable por elección",
+                "linkUrl": "/proposal/es/trustworthy-by-choice.html"
+              },
+              {
+                "linkText": "Herramientas digitales más limpias",
+                "linkUrl": "/proposal/es/cleaner-digital-tools.html"
+              }
+            ]
+          },
+          {
+            "triggerText": "Entrega",
+            "triggerUrl": "entrega",
+            "links": [
+              {
+                "linkText": "El camino a seguir",
+                "linkUrl": "/proposal/es/the-path-forward.html"
+              },
+              {
+                "linkText": "De la teoría a la entrega",
+                "linkUrl": "/proposal/es/from-theory-to-delivery.html"
+              },
+              {
+                "linkText": "Etapa Uno de Entrega",
+                "linkUrl": "/proposal/es/delivery-stage-one.html"
+              }
+            ]
+          },
+          {
+            "triggerText": "Acerca de",
+            "triggerUrl": "acerca-de",
+            "links": [
+              {
+                "linkText": "Acerca de Dot-Public Ltd.",
+                "linkUrl": "/proposal/es/about-dot-public.html"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "headerNavigationMenu": {
+      "navigationMenuMain": [
+        {
+          "open": true,
+          "id": "navigationMenuMain-a",
+          "groupedContent": true,
+          "iconURL": "/proposal/img/icons/eds-i-chevron-down-small.svg#eds-i-chevron-down-small",
+          "title": "Introducción",
+          "content": "<ul><li><a href=\"/proposal/es/introducing-dotpublic.html\">Presentando Dot-Public</a></li><li><a href=\"/proposal/es/the-proposal.html\">La Propuesta</a></li><li><a href=\"/proposal/es/situating-dotpublic.html\">Situando Dot-Public</a></li></ul>"
+        },
+        {
+          "open": false,
+          "id": "navigationMenuMain-b",
+          "groupedContent": true,
+          "iconURL": "/proposal/img/icons/eds-i-chevron-down-small.svg#eds-i-chevron-down-small",
+          "title": "Profundización",
+          "content": "<ul><li><a href=\"/proposal/es/model-of-governance.html\">Modelo de Gobernanza</a></li><li><a href=\"/proposal/es/eligibility-and-permissions.html\">Elegibilidad y Permisos</a></li><li><a href=\"/proposal/es/trustworthy-by-choice.html\">Confiable por elección</a></li><li><a href=\"/proposal/es/cleaner-digital-tools.html\">Herramientas digitales más limpias</a></li></ul>"
+        },
+        {
+          "open": false,
+          "id": "navigationMenuMain-c",
+          "groupedContent": false,
+          "iconURL": "/proposal/img/icons/eds-i-chevron-down-small.svg#eds-i-chevron-down-small",
+          "title": "Entrega",
+          "content": "<ul><li><a href=\"/proposal/es/the-path-forward.html\">El camino a seguir</a></li><li><a href=\"/proposal/es/from-theory-to-delivery.html\">De la teoría a la entrega</a></li><li><a href=\"/proposal/es/delivery-stage-one.html\">Etapa Uno de Entrega</a></li></ul>"
+        },
+        {
+          "open": false,
+          "id": "navigationMenuMain-test-d",
+          "groupedContent": false,
+          "iconURL": "/proposal/img/icons/eds-i-chevron-down-small.svg#eds-i-chevron-down-small",
+          "title": "Acerca de",
+          "content": "<ul><li><a href=\"/proposal/es/about-dot-public.html\">Acerca de Dot-Public Ltd.</a></li></ul>"
+        }
+      ]
+    }
+  }
+}

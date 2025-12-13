@@ -1,0 +1,132 @@
+{
+  "locale": "ga",
+  "title": "Togra Dot-Public",
+  "languageSwitcher": {
+    "label": "Teanga"
+  },
+  "eds-c-header-new": {
+    "logo": {
+      "link": "/proposal/",
+      "srcSmall": "/proposal/img/logo.svg",
+      "srcLarge": "/proposal/img/logo.svg",
+      "alt": "Logo Header"
+    },
+    "headerNavigation": {
+      "navigationText": "Roghchlár",
+      "iconMenu": "/proposal/img/icons/eds-i-menu-medium.svg#eds-i-menu-medium",
+      "navigationMain": {
+        "navigationAriaLabel": "example-nav-with-tray-dropdown",
+        "iconPath": "/proposal/img/icons/eds-i-chevron-down-small.svg#eds-i-chevron-down-small",
+        "iconPathSecondary": "#eds-i-chevron-right-small",
+        "navigationExpanderAriaLabel": "example-nav-expander-with-tray-dropdown",
+        "trayDropdown": false,
+        "navigationItems": [
+          {
+            "triggerText": "Réamhrá",
+            "triggerUrl": "Reamhra",
+            "links": [
+              {
+                "linkText": "Ag Tabhairt Isteach Dot-Public",
+                "linkUrl": "/proposal/ga/introducing-dotpublic.html"
+              },
+              {
+                "linkText": "An Togra",
+                "linkUrl": "/proposal/ga/the-proposal.html"
+              },
+              {
+                "linkText": "Dot-Public a Shuíomh",
+                "linkUrl": "/proposal/ga/situating-dotpublic.html"
+              }
+            ]
+          },
+          {
+            "triggerText": "Tumadh domhain",
+            "triggerUrl": "tumadh-domhain",
+            "links": [
+              {
+                "linkText": "Múnla Rialachais",
+                "linkUrl": "/proposal/ga/model-of-governance.html"
+              },
+              {
+                "linkText": "Incháilitheacht agus Ceadanna",
+                "linkUrl": "/proposal/ga/eligibility-and-permissions.html"
+              },
+              {
+                "linkText": "Iontaofa de rogha",
+                "linkUrl": "/proposal/ga/trustworthy-by-choice.html"
+              },
+              {
+                "linkText": "Uirlisí digiteacha níos glaine",
+                "linkUrl": "/proposal/ga/cleaner-digital-tools.html"
+              }
+            ]
+          },
+          {
+            "triggerText": "Seachadadh",
+            "triggerUrl": "seachadadh",
+            "links": [
+              {
+                "linkText": "An bealach chun cinn",
+                "linkUrl": "/proposal/ga/the-path-forward.html"
+              },
+              {
+                "linkText": "Ón teoiric go seachadadh",
+                "linkUrl": "/proposal/ga/from-theory-to-delivery.html"
+              },
+              {
+                "linkText": "Céim a hAon den Seachadadh",
+                "linkUrl": "/proposal/ga/delivery-stage-one.html"
+              }
+            ]
+          },
+          {
+            "triggerText": "Maidir le",
+            "triggerUrl": "maidir-le",
+            "links": [
+              {
+                "linkText": "Maidir le Dot-Public Ltd.",
+                "linkUrl": "/proposal/ga/about-dot-public.html"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "headerNavigationMenu": {
+      "navigationMenuMain": [
+        {
+          "open": true,
+          "id": "navigationMenuMain-a",
+          "groupedContent": true,
+          "iconURL": "/proposal/img/icons/eds-i-chevron-down-small.svg#eds-i-chevron-down-small",
+          "title": "Réamhrá",
+          "content": "<ul><li><a href=\"/proposal/ga/introducing-dotpublic.html\">Ag Tabhairt Isteach Dot-Public</a></li><li><a href=\"/proposal/ga/the-proposal.html\">An Togra</a></li><li><a href=\"/proposal/ga/situating-dotpublic.html\">Dot-Public a Shuíomh</a></li></ul>"
+        },
+        {
+          "open": false,
+          "id": "navigationMenuMain-b",
+          "groupedContent": true,
+          "iconURL": "/proposal/img/icons/eds-i-chevron-down-small.svg#eds-i-chevron-down-small",
+          "title": "Tumadh domhain",
+          "content": "<ul><li><a href=\"/proposal/ga/model-of-governance.html\">Múnla Rialachais</a></li><li><a href=\"/proposal/ga/eligibility-and-permissions.html\">Incháilitheacht agus Ceadanna</a></li><li><a href=\"/proposal/ga/trustworthy-by-choice.html\">Iontaofa de rogha</a></li><li><a href=\"/proposal/ga/cleaner-digital-tools.html\">Uirlisí digiteacha níos glaine</a></li></ul>"
+        },
+        {
+          "open": false,
+          "id": "navigationMenuMain-c",
+          "groupedContent": false,
+          "iconURL": "/proposal/img/icons/eds-i-chevron-down-small.svg#eds-i-chevron-down-small",
+          "title": "Seachadadh",
+          "content": "<ul><li><a href=\"/proposal/ga/the-path-forward.html\">An bealach chun cinn</a></li><li><a href=\"/proposal/ga/from-theory-to-delivery.html\">Ón teoiric go seachadadh</a></li><li><a href=\"/proposal/ga/delivery-stage-one.html\">Céim a hAon den Seachadadh</a></li></ul>"
+        },
+        {
+          "open": false,
+          "id": "navigationMenuMain-test-d",
+          "groupedContent": false,
+          "iconURL": "/proposal/img/icons/eds-i-chevron-down-small.svg#eds-i-chevron-down-small",
+          "title": "Maidir le",
+          "content": "<ul><li><a href=\"/proposal/ga/about-dot-public.html\">Maidir le Dot-Public Ltd.</a></li></ul>"
+        }
+      ]
+    }
+  }
+}
